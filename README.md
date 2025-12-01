@@ -27,6 +27,6 @@ Project ini dikembangkan dengan hati oleh tim berikut:
 
 Project Manager: Ahmad Mubasysyir Yuz
 
-UI/UX Designer: Ahmad Faiz Jamal
+UI/UX Designer: Ahmad Mubasysyir Yuz
 
 Frontend Engineers: Syafrudin, Elvy, Ainun, Firza
