@@ -2,146 +2,249 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - Fitur Utama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Masa Depan - Beranda Gabungan</title>
+    <link rel="stylesheet" href="../CSS/style_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar Konsisten -->
-    <h1>Pesan Masa Depan</h1>
-    <ul>
-        <li><a href="halaman_utama_belum.html">Home</a></li>
-        <li><a href="tulis_pesanmu.html">Tulis Pesanmu</a></li>
-        <li><a href="Honorable_mention.html">Honorable Mention</a></li>
-        <li><a href="artikel_emosional.html">Artikel Emosional</a></li>
-        <li><a href="rating_kami.html">Rating Kami</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="signup.html">Sign Up</a></li>
-    </ul>
-    <hr>
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <h1 class="logo">Pesan Masa Depan</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="tulis_pesanmu.html">Tulis Pesanmu</a></li>
+                <li><a href="Honorable_mention.html">Honorable Mention</a></li>
+                <li><a href="artikel_emosional.html">Artikel Emosional</a></li>
+                <li><a href="#rating_kami">Rating Kami</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h1>Pesan Masa Depan</h1>
-    <p>Karena ingatan bisa pudar, biarkan tulisan yang Mengingatkan:</p>
+    <section id="home" class="hero-section"> 
+        <div class="hero-overlay">
+            <div class="neon-box">
+                <h2>Karena Ingatan Bisa Pudar,</h2>
+                <h2>Biarkan Tulisan yang Mengingatkan.</h2>
+            </div>
+        </div>
+    </section>
     
-    <hr>
-    
-    <!-- BAGIAN 1: PILIH EMOTIKONMU (KEMBALI KE STATIS) -->
-    <div id="pilih_emotikon">
-        <div>
+    <div class="main-container">
+
+        <div id="pilih_emotikon" class="head_Pilih_emote">
             <br>
             <h2>Pilih Emosimu</h2>
-            <p>Pilih emotikon di bawah ini terukur ekspresi perasaanmu:</p>
-            
-            <!-- EMOTIKON HANYA TEKS -->
-            <h2>
-                😀 😄 😆 😅 😂 😊 😇 🥰 😍 😘 😗 😚 😙 🥲 😋 😛 😝 😜 🤪
-            </h2>
-            <br>
+            <p>Pilih emotikon di bawah ini untuk ukur ekspresi perasaanmu:</p>
+            <a href=""><img src="../Img/beaming-face-with-smiling-eyes.png" alt="">
+                <img src="../Img/rolling-on-the-floor-laughin.png" alt="">
+                <img src="../Img/upside-down-face.png" alt="">
+                <img src="../Img/face-holding-back-tears_.png" alt="">
+                <img src="../Img/pensive-face.png" alt="">
+                <img src="../Img/face-with-spiral-eyes.png" alt="">
+                <img src="../Img/weary-face.png" alt="">
+                <img src="../Img/loudly-crying-face.png" alt="">
+                <img src="../Img/smiling-face-with-hearts.png" alt="">
+                <img src="../Img/star-struck.png" alt="">
+                <img src="../Img/pouting-face.png" alt="">
+            </a>
         </div>
-        
-        <hr>
-        
-        <!-- Pesan Motivasi default/placeholder (Dikembalikan ke versi statis) -->
-        <div id="motivasi_placeholder">
+        <br>
+        <div class="motivasi_placeholder">
+            <div class="pesan_kiri">
             <h2>Pesan Motivasi</h2>
             <p>Tetap terinspirasi dengan kutipan-kutipan unik ini.</p>
-            <br>
-            <div>
-                <h3>Sudah Cukup</h3>
-                <p>
-                    Terimalah dirimu apa adanya, dan biarkan cahayamu bersinar.
-                </p>
-                <small>Self Love | Inspiration</small>
             </div>
-            <br>
+            
+            <div class="pesan_kanan">
+                <div class="kotak_emote">
+                    <h2>😀</h2>
+                </div>
+                <div class="kotak_motivasi">
+                    <h3>Sudah Cukup</h3>
+                    <p>Terimalah dirimu apa adanya, dan biarkan cahayamu bersinar.</p>
+                    <div class="tag_motivasi">
+                        <small>Self Love</small> 
+                    </div>
+                    <div class="tag_motivasi">
+                        <small>Inspiration</small>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
-    
-    <br><br><hr><br><br>
-
-    <!-- ============================================== -->
-    <!-- BAGIAN 2: ARTIKEL EMOSIONAL -->
-    <div id="artikel_emosional">
-        <div>
-            <h1>Artikel Emosional</h1>
+    <br><br><br><br><br>    
+        <div class="content-card letter-card">
+            <div class="card-header">
+                <h3>Surat untuk ku dari masa lalu</h3>
+                <small>Waktu yang dilalui — hampir 3 tahun</small>
+            </div>
+            
+            <p class="letter-body">
+                Untuk diriku di masa depan. Apa kabar? Semoga sehat ya diriku, oh ya bagaimana dah tercapai belum dengan sixpack nya? Kalau udah tingkat kan lagi dan bagus kan lagi mana tau kan ada yang srek kita kan bisex, kalau belum ayo bangun sixpacknya ini kan cita cita mu dari dulu!!! Kerja dengan keras, semoga selalu sukses diriku dimasa depan pokoknya dalam 1 tahun sixpack dah harus ada ya 😎😎😎 jangan lupa nikah juga nanti kalau sudah punya anak ajarkan juga di ngegym biar dia bisa pamer sama kawannya. Semoga cita cita ku tercapai !!! AMIN Dari diriku di masa lalu Thks ya bro
+            </p>
+            
+            <div class="letter-meta">
+                <div class="interactions">
+                    <a href="#"><i class="fas fa-heart"></i> Suka</a>
+                    <a href="#"><i class="fas fa-comment"></i> Komentar</a> 
+                    <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a> 
+                </div>
+                <span class="date">Mar 22, 2017 → Jan 03, 2020 • 102 kata</span>
+            </div>
+            
+            <div class="letter-nav">
+                <a href="login.html"><i class="fas fa-arrow-left"></i>    Sebelumnya</a> 
+                <a href="login.html">Selanjutnya    <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="cta-wrapper">
+                <a href="login.html"><button class="btn btn-primary">MULAI TULIS PESAN MILIKMU</button></a>
+            </div>
+        </div>
+        
+    <section class="section-spacer">
+    <div class="container layout-split">
+        
+        <div class="section-header-side">
+            <h2>Artikel Emosional</h2>
             <p>Hubungan dan perasaan yang disampaikan melalui kata-kata.</p>
-            <a href="artikel_emosional.html"><button>Baca Semua Artikel</button></a>
+            <a href="artikel_emosional.html" class="btn btn-primary">Baca Semua Artikel</a>
         </div>
         
-        <div>
-            <!-- Artikel 1: The Future of Technology -->
-            <div>
-                <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
-                <h3>The Future of Technology</h3>
-                <p>Exploring what lies ahead in tech.</p>
-                <small>[AI] [Innovation]</small><br>
-                <small>John Doe</small>
-            </div>
-            <hr>
-            <!-- Artikel 2: The Impact of Design -->
-            <div>
-                <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Desain" width="100" height="70">
-                <h3>The Impact of Design</h3>
-                <p>How design shapes our daily experiences.</p>
-                <small>[UX] [Design]</small><br>
-                <small>Jane Smith</small>
-            </div>
-            <hr>
-            <div>
-                <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Koneksi" width="100" height="70">
-                <h3>The Importance of Connection</h3>
-                <p>How strong social bonds contribute to longevity and happiness.</p>
-                <small>[Komunitas] [Hubungan]</small><br>
-                <small>Kevin R.</small>
-            </div>
-        </div>
+        <div class="article-list">
+            <div class="vertical-track">
+                
+                <div class="article-card">
+                    <div class="article-img"></div>
+                    <div class="article-content">
+                        <h3>The Future of Technology</h3>
+                        <p>Exploring what lies ahead in tech.</p>
+                        <div class="tags"><small>AI</small><small>Innovation</small></div>
+                        <small class="author">John Doe</small>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-img"></div>
+                    <div class="article-content">
+                        <h3>The Impact of Design</h3>
+                        <p>How design shapes our daily experiences.</p>
+                        <div class="tags"><small>UX</small><small>Design</small></div>
+                        <small class="author">Jane Smith</small>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-img"></div>
+                    <div class="article-content">
+                        <h3>Navigating Change</h3>
+                        <p>Strategies for managing life transitions.</p>
+                        <div class="tags"><small>Growth</small><small>Life</small></div>
+                        <small class="author">Emily R.</small>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-img"></div>
+                    <div class="article-content">
+                        <h3>The Future of Technology</h3>
+                        <p>Exploring what lies ahead in tech.</p>
+                        <div class="tags"><small>AI</small><small>Innovation</small></div>
+                        <small class="author">John Doe</small>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-img"></div>
+                    <div class="article-content">
+                        <h3>The Impact of Design</h3>
+                        <p>How design shapes our daily experiences.</p>
+                        <div class="tags"><small>UX</small><small>Design</small></div>
+                        <small class="author">Jane Smith</small>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-img"></div>
+                    <div class="article-content">
+                        <h3>Navigating Change</h3>
+                        <p>Strategies for managing life transitions.</p>
+                        <div class="tags"><small>Growth</small><small>Life</small></div>
+                        <small class="author">Emily R.</small>
+                    </div>
+                </div>
+            </div> 
+        </div> 
     </div>
+    </section>
+
+    <section class="section-spacer">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Honorable Mention Award</h2>
+                    <p class="section-subtitle">Menghargai kontribusi yang luar biasa</p>
+                    <a href="Honorable_mention.html" class="btn btn-primary mt-2">Lihat Lebih Banyak</a>
+                </div>
+                <br>
+                <br>
+                <div class="awardee-section">
+                    <h3 class="award-title">Awardee Profile</h3>
+                    
+                    <div class="awardee-list">
+                        <div class="awardee-card">
+                            <div class="profile-card">
+                                <div class="avatar-circle"><img src="" alt=""></div>
+                                <div class="profile-info">
+                                    <strong>Username</strong>
+                                    <p>Jane Doe</p>
+                                    <small>Verified Contributor</small>
+                                </div>
+                            </div>
+                            <div class="profile-details">
+                                <strong>Achievement Snippet</strong>
+                                <p>For exceptional performance in community engagement and consistency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="awardee-follow-section">                    
+                    <div class="awardee-follow-card">
+                        <div class="profile-left">
+                            <div class="avatar-circle-left"><img src="" alt=""></div>
+                            <div class="profile-name">
+                                <strong>Jane Doe</strong>
+                                <small>Honorable Mention</small>
+                                <small>Verified</small>
+                                <p>An exemplary community member, dedicated to sharing knowledge.</p>
+                            </div>
+                        </div>
+                        <div class="follow-awardee">
+                            <a href="Honorable_mention.html" class="btn btn-primary mt-2">Ikuti</a>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+    </section>
     
-    <br><br><hr><br><br>
-
-    <!-- BAGIAN 3: HONORABLE MENTION -->
-    <div id="honorable_mention">
-        <div>
-            <h1>Honorable Mention Award</h1>
-            <p>Menghargai kontribusi yang luar biasa</p>
-            <a href="Honorable_mention.html"><button>Lihat Lebih Banyak</button></a>
-            <br>
-        </div>
-
-        <hr>
-
-        <h2>Daftar Awardee Profile</h2>
-        
-        <div>
-            <h3>Awardee Profile 1</h3>
-            <div>
-                <div>
-                    <img src="placeholder_avatar.png" alt="Avatar Pengguna 1" width="50" height="50">
-                    <strong>User Name 1</strong><br>
-                    <small>John Doe</small><br>
-                    <small>Verified Contributor</small>
-                </div>
-                <div>
-                    <strong>Achievement Snippet</strong>
-                    <p>For exceptional performance in community engagement.</p>
-                </div>
-            </div>
-            <hr>
-        </div>
-    </div>
-
-    <br><br><hr><br><br>
-
-    <!-- ============================================== -->
     <!-- BAGIAN 4: RATING KAMI -->
+    <section class="section-spacer">
     <div id="rating_kami">
-        <div>
+        <div class="rating-title">
             <h1>Rating Kami</h1>
-            <div>
+            <div class="account-rating">
                 <img src="placeholder_avatar.png" alt="Avatar John Doe" width="50" height="50">
-                <strong>John Doe</strong><br>
-                <small>Your feedback matters</small>
+                <div class="account-rating-profile">
+                    <strong>John Doe</strong><br>
+                    <small>Your feedback matters</small>
+                </div>
             </div>
             <h2>Umpan Balik Anda</h2>
-            <table border="1">
+            <div class="kolom-rating">
+            <table>
                 <tr>
                     <th>Nilai Rata-Rata</th>
                     <th>Jumlah Ulasan</th>
@@ -157,144 +260,126 @@
                 <h3>Berikan Ulasan</h3>
                 <textarea placeholder="Tuliskan pikiran Anda di sini..." rows="4" cols="50"></textarea>
                 <p>Masukkan Anda membantu kami untuk terus memperbaiki diri!</p>
-                <button type="button">Hapus</button>
-                <button type="submit" onclick="window.location.href='testimonial.html'; return false;">Berikan Rating</button>
+                <button type="button" class="btn btn-secondary">Hapus</button>
+                <button type="submit" onclick="window.location.href='testimonial.html'; return false;" class="btn btn-primary">Berikan Rating</button>
             </form>
+            </div>
         </div>
     </div>
-    
-    <hr>
+    </section>
 
-    <div>
-        <h1>Apa yang Dikatakan</h1>
-        <h1>Pengguna Kami</h1>
-        <p>Lihat bagaimana kami telah memberikan dampak.</p>
+    <section class="testimonials-section">
+    <div class="testimonial-flex-container">
+        <div class="testimonial-text-area">
+            <h2>Apa yang Dikatakan<br>Pengguna Kami</h2>
+            <p>Lihat bagaimana kami telah memberikan dampak.</p>
+        </div>
+
+        <div class="testimonial-marquee-wrapper">
+            <div class="marquee-track">
+                
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <div class="avatar"></div> <div class="user-details">
+                            <h4>Alice B.</h4>
+                            <span class="stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p>An incredible platform! Helped me connect easily.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <div class="avatar"></div>
+                        <div class="user-details">
+                            <h4>John D.</h4>
+                            <span class="stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p>I'm impressed with the security features!</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <div class="avatar"></div>
+                        <div class="user-details">
+                            <h4>Sarah M.</h4>
+                            <span class="stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p>Very user friendly interface.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <div class="avatar"></div>
+                        <div class="user-details">
+                            <h4>Alice B.</h4>
+                            <span class="stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p>An incredible platform! Helped me connect easily.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <div class="avatar"></div>
+                        <div class="user-details">
+                            <h4>John D.</h4>
+                            <span class="stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p>I'm impressed with the security features!</p>
+                </div>
+
+                 <div class="testimonial-card">
+                    <div class="user-info">
+                        <div class="avatar"></div>
+                        <div class="user-details">
+                            <h4>Sarah M.</h4>
+                            <span class="stars">★★★★★</span>
+                        </div>
+                    </div>
+                    <p>Very user friendly interface.</p>
+                </div>
+
+            </div>
+        </div>
     </div>
-    
-    <br>
+    </section>
 
-    <div>
-        
-        <!-- TESTIMONIAL 1 (Alice B.) -->
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Alice B." width="30" height="30">
-                <strong>Alice B.</strong> 
-                <span>⭐⭐⭐⭐⭐</span>
-            </div>
-            <p>
-                An incredible platform! Help...
-            </p>
-        </div>
-        
-        <!-- TESTIMONIAL 2 (John D.) -->
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar John D." width="30" height="30">
-                <strong>John D.</strong>
-                <span>⭐⭐⭐⭐⭐</span>
-            </div>
-            <p>
-                I'm impressed with the security features!
-            </p>
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-brand">
+            Pesan Masa Depan
         </div>
 
-        <!-- TESTIMONIAL 3 (Charlie C.) -->
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Charlie C." width="30" height="30">
-                <strong>Charlie C.</strong>
-                <span>⭐⭐⭐⭐</span>
-            </div>
-            <p>
-                The time capsule feature is truly unique and fun!
-            </p>
+        <div class="footer-nav">
+            <a href="#"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
+            <a href="#"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
+            <a href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            <a href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a href="#"><i class="fas fa-paper-plane"></i> Undang Teman</a>
         </div>
 
-        <!-- TESTIMONIAL 4 (Diana E.) -->
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Diana E." width="30" height="30">
-                <strong>Diana E.</strong>
-                <span>⭐⭐⭐⭐⭐</span>
-            </div>
-            <p>
-                Received my first future letter today—it was magical!
-            </p>
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-x"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
 
-        <!-- TESTIMONIAL 5 (Ethan F.) -->
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Ethan F." width="30" height="30">
-                <strong>Ethan F.</strong>
-                <span>⭐⭐⭐⭐</span>
+        <div class="footer-bottom">
+            <div class="footer-legal-links">
+                <a href="#">Terms of use</a>
+                <span>·</span>
+                <a href="#">Privacy Policy</a>
             </div>
-            <p>
-                Great place to keep my goals accountable. Highly recommend!
-            </p>
+            <p>Pesan Masa Depan™ brought to you by Kelompok 2 ©2025.</p>
         </div>
-
-        <!-- TESTIMONIAL 6 (Fiona G.) -->
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Fiona G." width="30" height="30">
-                <strong>Fiona G.</strong>
-                <span>⭐⭐⭐⭐⭐</span>
-            </div>
-            <p>
-                The emotional article section is surprisingly insightful.
-            </p>
         </div>
-        
-        <!-- TESTIMONIAL 7 (George H.) -->
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar George H." width="30" height="30">
-                <strong>George H.</strong>
-                <span>⭐⭐⭐⭐</span>
-            </div>
-            <p>
-                Simple, clean interface. Gets the job done perfectly.
-            </p>
-        </div>
-        
-        <!-- TESTIMONIAL 8 (Hannah I.) -->
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Hannah I." width="30" height="30">
-                <strong>Hannah I.</strong>
-                <span>⭐⭐⭐⭐⭐</span>
-            </div>
-            <p>
-                My favorite way to send future messages to myself!
-            </p>
-        </div>
-        
-    </div>
-    
-</div>
-
-<hr>
-
-<div>
-    
-    <p>
-        <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">YouTube</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
-    </p>
-    
-    <small>Terms of Use - Privacy Policy</small><br>
-    <small>Pesan Masa Depan brought to you by Kelompok 2 ©2025.</small>
-</div>
-
-    <!-- Footer -->
-    <div>
-        <a href="tulis_pesanmu.html">Tulis Pesanmu</a> | 
-        <a href="Honorable_mention.html">Baca Pesan Orang</a> | 
-        <a href="login.html">Sign In</a> | 
-        <a href="signup.html">Sign Up</a> | 
-        <a href="#">Undang Temen</a>
-    </div>
+    </footer>
 
 </body>
 </html>
