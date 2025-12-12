@@ -39,11 +39,11 @@ hr {
 }
 
 /* --- UTILITIES --- */
-.container {
+/* .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-}
+
+} */
 
 .text-center { text-align: center; }
 .mb-4 { margin-bottom: 2rem; }
@@ -171,16 +171,6 @@ hr {
 .main-content {
     position: relative;
     z-index: 10;
-}
-
-/* Bagian Emotikon */
-/* --- CONTAINER UTAMA --- */
-.main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #F0EDEE; /* Sesuaikan dengan background halaman Anda */
 }
 
 /* --- BAGIAN 1: PILIH EMOSIMU --- */
@@ -327,7 +317,7 @@ hr {
     border-radius: 12px;
     
     /* 1. MENGURANGI TINGGI: Kurangi padding atas-bawah (30px), kiri-kanan tetap lega (50px) */
-    padding: 30px 50px; 
+    padding: 0 50px; 
     
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
     border: none;
