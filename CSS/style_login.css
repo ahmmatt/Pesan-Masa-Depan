@@ -317,7 +317,7 @@ hr {
     border-radius: 12px;
     
     /* 1. MENGURANGI TINGGI: Kurangi padding atas-bawah (30px), kiri-kanan tetap lega (50px) */
-    padding: 0 50px; 
+    padding: 30px 50px; 
     
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
     border: none;
