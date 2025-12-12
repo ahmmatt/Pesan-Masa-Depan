@@ -1,3 +1,4 @@
+//Bagian Logika Penyembunyian
     // Ambil elemen-elemen yang dibutuhkan
     const inputTanggal = document.getElementById('tanggal');
     const containerRadio = document.getElementById('container-radio');
@@ -40,7 +41,7 @@
         containerRadio.style.display = 'flex'; // Gunakan flex agar layoutnya kembali seperti semula
     });
 
-
+// Bagian Tanggal Per Hari Ini
     // 1. Ambil elemen h1 berdasarkan ID yang kita buat tadi
     const judulElement = document.getElementById('judul-hari-ini');
 
