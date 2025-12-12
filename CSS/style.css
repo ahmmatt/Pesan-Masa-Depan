@@ -264,12 +264,37 @@ hr {
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
+    
+    /* --- Glassmorphism Style --- */
     background: rgba(150, 150, 150, 0.2); 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     color: #555;
+
+    /* --- TAMBAHAN WAJIB UNTUK ANIMASI --- */
+    /* Agar perubahan saat disentuh mouse terasa halus */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* --- EFEK HOVER (Saat Mouse Diarahkan) --- */
+.icon-circle:hover {
+    /* 1. Lingkaran naik ke atas sedikit (Melayang) */
+    transform: translateY(-8px);
+
+    /* 2. Background jadi sedikit lebih pekat */
+    background: rgba(150, 150, 150, 0.3);
+
+    /* 3. Border jadi putih solid (lebih bercahaya) */
+    border-color: #ffffff;
+
+    /* 4. Bayangan membesar (efek 3D lebih dalam) */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+    /* 5. Warna Icon berubah jadi Biru Utama */
+    color: #5D9CEC; 
 }
 
 .feature-item h2 {
