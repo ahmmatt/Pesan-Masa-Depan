@@ -2,72 +2,124 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Tulis Pesan Hari Ini</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Masa Depan - Beranda Gabungan</title>
+    <link rel="stylesheet" href="../CSS/style_tulis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>Pesan Masa Depan</h1>
-    <ul>
-        <li><a href="halaman_utama_belum.html">Home</a></li>
-        <li><a href="tulis_pesanmu.html">Tulis Pesanmu</a></li>
-        <li><a href="Honorable_mention.html">Honorable Mention</a></li>
-        <li><a href="artikel_emosional.html">Artikel Emosional</a></li>
-        <li><a href="rating_kami.html">Rating Kami</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="signup.html">Sign Up</a></li>
-    </ul>
-    <hr>
-    
-    <h1>Pesan Hari Ini - Nov 29, 2025</h1>
-    
-    <form>
-        <div>
-            <label for="pesan">Untuk diriku,</label><br>
-            <textarea id="pesan" name="pesan" rows="15" cols="50"></textarea>
-            <p>Berikan ke <a href="#">temanmu</a> untuk menyertakan gambar, video dan tautan.</p>
+<nav class="navbar">
+    <div class="container navbar-content">
+        <h1 class="logo">Pesan Masa Depan</h1>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="tulis_pesanmu.html">Tulis Pesanmu</a></li>
+            <li><a href="Honorable_mention.html">Honorable Mention</a></li>
+            <li><a href="artikel_emosional.html">Artikel Emosional</a></li>
+            <li><a href="#rating_kami">Rating Kami</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+            <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="home" class="hero-section"> 
+    <div class="hero-overlay">
+        <div class="neon-box">
+            <h2>Karena Ingatan Bisa Pudar,</h2>
+            <h2>Biarkan Tulisan yang Mengingatkan.</h2>
+        </div>
+    </div>
+</section>
+   
+<div class="main-container">
+    <h1 id="judul-hari-ini">Pesan Hari Ini - Loading...</h1>
+    <div class="main-pesan">
+    <form action="" method="">
+        <div class="tempat-menulis">
+            <label for="pesan"></label>
+            <textarea id="pesan" name="pesan" rows="15" cols="50">Untuk diriku,</textarea>
+            <div class="bawah_menulis">
+                <p>Perbarui ke <strong>Premium</strong> untuk menyertakan gambar, video, dan berkas.</p>
+                <p><a href=""></a>2 kata</p>
+            </div>
         </div>
         
-        <hr>
-        
-        <div>
-            <h2>Dikirim dalam</h2>
-            <label><input type="radio" name="waktu" value="6_bulan"> 6 bulan</label>
-            <label><input type="radio" name="waktu" value="1_tahun"> 1 tahun</label>
-            <label><input type="radio" name="waktu" value="3_tahun"> 3 tahun</label>
-            <label><input type="radio" name="waktu" value="5_tahun"> 5 tahun</label>
-            <label><input type="radio" name="waktu" value="10_tahun"> 10 tahun</label>
-            atau pilih <a href="#">tanggal</a>
-            
+        <div class="pilihan-tujuan-pesan">
+            <div class="bagian-pilihan">
+                <h2>Dikirim dalam</h2>
+                <h2>atau pilih 
+                    <span class="date-wrapper">
+                    <label for="tanggal">tanggal</label>
+                    <input type="date" id="tanggal" name="tanggal">
+                    </span>
+                </h2> 
+            </div>
+            <div class="jangka-waktu-pilihan" id="container-radio">
+                <label><input type="radio" name="waktu" value="6_bulan"> 6 bulan</label>
+                <label><input type="radio" name="waktu" value="1_tahun"> 1 tahun</label>
+                <label><input type="radio" name="waktu" value="3_tahun"> 3 tahun</label>
+                <label><input type="radio" name="waktu" value="5_tahun"> 5 tahun</label>
+                <label><input type="radio" name="waktu" value="10_tahun"> 10 tahun</label>
+            </div>
+
+        <div id="tampilan-tanggal-dipilih" style="display: none;">
+            <div class="date-result-box">
+                <span id="teks-tanggal-hasil"></span>
+                <button type="button" id="btn-reset-tanggal" class="btn-reset">Batal</button>
+            </div>
+        </div>
+
             <h3>Pilih Audiens Anda</h3>
-            <label><input type="radio" name="audiens" value="private" checked> Private</label> | 
-            <label><input type="radio" name="audiens" value="public"> Public, but anonymous</label>
-            
-            <p>Pastikan Anda menerima surat Anda</p>
-            <input type="email" placeholder="Silakan masukkan alamat email" size="30">
+            <div class="pilih-audiens">
+                <label><input type="radio" name="audiens" value="private" checked> Private</label> | 
+                <label><input type="radio" name="audiens" value="public"> Public, but anonymous</label>
+            </div>
+            <p>Pastikan <strong>Anda menerima</strong> surat <strong>Anda</strong></p>
+            <div class="alamat-email">
+                <input type="email" placeholder="Silakan masukkan alamat email" size="30">
+            </div>
             <p>Anda akan menerima email konfirmasi. pastikan alamat email Anda benar. Dengan menekan surat dan mendaftar Surat Masa Depan.</p>
-            
-            <button type="submit">Kirim ke Masa Depan</button><br><br>
-            <button type="button">Pengaturan</button>
+            <div class="Tombol-kirim">
+                <button type="submit" class="btn btn-primary">Kirim ke Masa Depan</button>
+                <button type="button" class="btn btn-primary">Pengaturan</button>
+            </div>
         </div>
     </form>
-    
-    <hr>
-
-    <div>
-        <p>
-        <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">YouTube</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
-        </p>
-    
-        <small>Terms of Use - Privacy Policy</small><br>
-        <small>Pesan Masa Depan brought to you by Kelompok 2 ©2025.</small>
     </div>
-    
-    <div>
-        <a href="tulis_pesanmu.html">Tulis Pesanmu</a> | 
-        <a href="Honorable_mention.html">Baca Pesan Orang</a> | 
-        <a href="login.html">Sign In</a> | 
-        <a href="signup.html">Sign Up</a> | 
-        <a href="#">Undang Teman</a>
-    </div>
+</div>
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-brand">
+            Pesan Masa Depan
+        </div>
 
+        <div class="footer-nav">
+            <a href="#"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
+            <a href="#"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
+            <a href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            <a href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a href="#"><i class="fas fa-paper-plane"></i> Undang Teman</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-x"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-legal-links">
+                <a href="#">Terms of use</a>
+                <span>·</span>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p>Pesan Masa Depan™ brought to you by Kelompok 2 ©2025.</p>
+        </div>
+        </div>
+    </footer>
 </body>
+<script src="../JS/script_tulisPesan.js"></script>
 </html>
