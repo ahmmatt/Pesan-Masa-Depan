@@ -29,4 +29,4 @@ Project Manager: Ahmad Mubasysyir Yuz
 
 UI/UX Designer: Ahmad Mubasysyir Yuz
 
-Frontend Engineers: Syafrudin, Elvy, Ainun, Firza
+Frontend Engineers: Firza, Syafrudin, Elvy 
