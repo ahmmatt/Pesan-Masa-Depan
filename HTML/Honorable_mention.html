@@ -8,14 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
+  <nav class="navbar">
         <div class="container navbar-content">
             <h1 class="logo">Pesan Masa Depan</h1>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="../HTML/halaman_utama_login.html">Home</a></li>
                 <li><a href="tulis_pesanmu.html">Tulis Pesanmu</a></li>
                 <li><a href="Honorable_mention.html">Honorable Mention</a></li>
                 <li><a href="artikel_emosional.html">Artikel Emosional</a></li>
+                <li><a href="artikel_tersimpan.html">Tersimpan</a></li> 
                 <li><a href="rating_kami.html">Rating Kami</a></li>
                 <li><a href="login.html" class="btn-login">Login</a></li>
                 <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
@@ -31,10 +37,8 @@
             </div>
         </div>
     </section>
-    <!-- Konten Halaman Honorable Mention Award -->
     <div class="container main-content">
         <div class="content-card letter-card">
-        <!-- Bagian Header Award -->
         <div class="Honor">
             <h1>Honorable Mention Award</h1>
             <p>Menghargai kontribusi yang luar biasa</p>
@@ -47,11 +51,6 @@
             </div>
         </div>
     </div>
-
-    <!-- ==================================== -->
-    <!-- BAGIAN 1: BULAN INI (4 Profil) -->
-    <!-- ==================================== -->
-    
 
     <div id="panel-bulan-ini" class="container awardee-panel active">
         <h2 class="section-title text-center mb-4">Awardee Bulan Ini</h2><br>
@@ -269,5 +268,6 @@
             }
         }
     </script>
+    <script src="../JS/menu_burger.js"></script>
 </body>
 </html>

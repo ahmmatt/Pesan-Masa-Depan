@@ -1216,3 +1216,141 @@ form .btn {
     .letter-card { padding: 20px; margin-top: -30px; }
     .section-title { font-size: 1.8rem; }
 }
+
+/* =================================================================
+   SOLUSI FINAL CSS BURGER MENU (Override Total Posisi)
+   Ini menggunakan positioning untuk menjamin posisi di KANAN ATAS.
+   ================================================================= */
+
+/* --- 1. Memastikan Tata Letak Horizontal di Desktop (Sesuai Kebutuhan) --- */
+.navbar-content {
+    /* Tetap butuh flex untuk desktop */
+    display: flex !important; 
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative; /* Penting untuk positioning anak elemen */
+}
+
+/* --- 2. Gaya Dasar Hamburger (Ikon 3 Garis Animasi) --- */
+.hamburger {
+    display: none; /* Sembunyikan di desktop */
+    position: relative;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    transform-origin: 1px; 
+    transition: all 0.3s ease;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--white, #ffffff);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) { top: 0px; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { top: 16px; }
+
+/* Animasi ke 'X' saat aktif */
+.hamburger.is-active span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+
+/* --- 3. MOBILE STYLING (Responsive @media) --- */
+@media (max-width: 768px) {
+    
+    /* 3A. POSISI BURGER MENU DI KANAN ATAS NAVIGASI */
+    .hamburger {
+        display: block !important; 
+        position: absolute; /* Posisikan absolut dari .navbar-content */
+        right: 20px;       /* Jarak dari kanan container */
+        top: 50%;          /* Pusatkan vertikal */
+        transform: translateY(-50%);
+    }
+
+    /* Memastikan Logo tidak terganggu di mode mobile */
+    .navbar-content .logo {
+        position: static;
+    }
+    
+    /* 3B. NAV LINKS (Sidebar Slide-in) */
+    .nav-links {
+        display: block; 
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100%;
+        
+        background-color: var(--dark-blue, #1e2a38); 
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        list-style: none;
+        
+        padding: 80px 30px 20px;
+        
+        transform: translateX(100%); 
+        transition: transform 0.4s ease-out;
+        
+        overflow-y: auto; 
+        z-index: 1000;
+    }
+    
+    /* Menu Terbuka (Slide in) */
+    .nav-links.is-open {
+        transform: translateX(0);
+    }
+    
+    /* Styling item di dalam sidebar */
+    .nav-links li {
+        width: 100%; 
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links a {
+        color: var(--white, #ffffff);
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: block;
+        padding: 5px 0;
+    }
+    
+    /* Efek Overlay Latar Belakang */
+    .navbar.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    /* Kunci scroll body saat menu terbuka */
+    body.menu-open {
+        overflow: hidden !important;
+    }
+}
