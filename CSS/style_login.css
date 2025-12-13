@@ -39,15 +39,18 @@ hr {
 }
 
 /* --- UTILITIES --- */
-/* .container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
-
-} */
+    padding: 0 20px;
+}
 
 .text-center { text-align: center; }
 .mb-4 { margin-bottom: 2rem; }
 
+.section-spacer {
+    padding: 60px 0;
+}
 
 .section-title {
     font-size: 2.2rem;
@@ -166,7 +169,6 @@ hr {
     font-weight: 600;
     text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
-
 /* --- MAIN CONTENT & LETTER CARD --- */
 .main-content {
     position: relative;
@@ -975,6 +977,71 @@ form .btn {
     .kolom-rating td { border-radius: 0 0 8px 8px; border-bottom: 1px solid #d0d7de; }
 }
 
+/* --- TESTIMONIALS SECTION (UPDATED) --- */
+.testimonials-section {
+    padding: 80px 0;
+    overflow: hidden; /* Mencegah scrollbar horizontal pada halaman */
+}
+
+/* Wrapper untuk membagi area Teks (Kiri) dan Kartu Berjalan (Kanan) */
+.testimonial-flex-container {
+    display: flex;
+    align-items: center;
+    max-width: 100%; /* Full width agar animasi mulus */
+    gap: 10px;
+}
+
+/* Bagian Teks Judul (Kiri) */
+.testimonial-text-area {
+    width: 45%; /* Mengambil 35% lebar layar */
+    padding-left: 15%; /* Padding agar tidak terlalu mepet kiri */
+    flex-shrink: 0;
+    z-index: 2;
+
+}
+
+.testimonial-text-area h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.testimonial-text-area p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Area Animasi Kartu (Kanan) */
+.testimonial-marquee-wrapper {
+    width: 40%; /* Sisa lebar layar */
+    overflow: hidden; /* Menyembunyikan kartu yang keluar jalur */
+    position: relative;
+    padding: 20px 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Efek fade di pinggir */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Track/Jalur Animasi */
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    /* Animasi berjalan */
+    animation: scrollLeftToRight 25s linear infinite; 
+}
+
+/* Keyframes untuk gerak Kiri ke Kanan */
+@keyframes scrollLeftToRight {
+    0% {
+        transform: translateX(-50%); /* Mulai dari posisi tengah set */
+    }
+    100% {
+        transform: translateX(0); /* Berjalan ke arah kanan (0) */
+    }
+}
+
 /* Kartu Testimonial */
 .testimonial-card {
     background: var(--white);
@@ -1026,7 +1093,6 @@ form .btn {
 .marquee-track:hover {
     animation-play-state: paused;
 }
-
 /* --- FOOTER (UPDATED - LEFT ALIGNED) --- */
 .footer {
     background: var(--white);
@@ -1131,14 +1197,6 @@ form .btn {
     }
 }
 
-/* --- FOOTER --- */
-.footer {
-    background: var(--white);
-    padding: 50px 0 20px;
-    margin-top: 50px;
-    border-top: 1px solid #eee;
-    text-align: center;
-}
 
 .footer-links a { margin: 0 10px; color: #555; font-weight: 600; }
 .footer-meta { color: #888; margin-top: 20px; font-size: 0.85rem; }

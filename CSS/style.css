@@ -341,7 +341,7 @@ hr {
 
 /* --- TESTIMONIALS SECTION (UPDATED) --- */
 .testimonials-section {
-    padding: 80px 0;
+    padding: 40px 0;
     overflow: hidden; /* Mencegah scrollbar horizontal pada halaman */
 }
 
@@ -356,7 +356,7 @@ hr {
 /* Bagian Teks Judul (Kiri) */
 .testimonial-text-area {
     width: 45%; /* Mengambil 35% lebar layar */
-    padding-left: 10%; /* Padding agar tidak terlalu mepet kiri */
+    padding-left: 5%; /* Padding agar tidak terlalu mepet kiri */
     flex-shrink: 0;
     z-index: 2;
 

@@ -2,291 +2,272 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Honorable Mention Award</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Masa Depan - Beranda Gabungan</title>
+    <link rel="stylesheet" href="../CSS/style_honor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>Pesan Masa Depan</h1>
-    <ul>
-        <li><a href="halaman_utama_belum.html">Home</a></li>
-        <li><a href="tulis_pesanmu.html">Tulis Pesanmu</a></li>
-        <li><a href="Honorable_mention.html">Honorable Mention</a></li>
-        <li><a href="artikel_emosional.html">Artikel Emosional</a></li>
-        <li><a href="rating_kami.html">Rating Kami</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="signup.html">Sign Up</a></li>
-    </ul>
-    <hr>
-    
-    <!-- Konten Halaman Honorable Mention Award -->
-    
-    <!-- Bagian Header Award -->
-    <div>
-        <h1>Honorable Mention Award</h1>
-        <p>Menghargai kontribusi yang luar biasa</p>
-        <a href="#"><button>Lihat Lebih Banyak</button></a>
-        <br>
-    </div>
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <h1 class="logo">Pesan Masa Depan</h1>
+            <ul class="nav-links">
+                <li><a href="../HTML/halaman_utama_login.html">Home</a></li>
+                <li><a href="tulis_pesanmu.html">Tulis Pesanmu</a></li>
+                <li><a href="Honorable_mention.html">Honorable Mention</a></li>
+                <li><a href="artikel_emosional.html">Artikel Emosional</a></li>
+                <li><a href="rating_kami.html">Rating Kami</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+                <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <hr>
+    <section id="home" class="hero-section"> 
+        <div class="hero-overlay">
+            <div class="neon-box">
+                <h2>Karena Ingatan Bisa Pudar,</h2>
+                <h2>Biarkan Tulisan yang Mengingatkan.</h2>
+            </div>
+        </div>
+    </section>
+    <!-- Konten Halaman Honorable Mention Award -->
+    <div class="container main-content">
+        <div class="content-card letter-card">
+        <!-- Bagian Header Award -->
+        <div class="Honor">
+            <h1>Honorable Mention Award</h1>
+            <p>Menghargai kontribusi yang luar biasa</p>
+            <br>
+        </div>
+
+            <div class="toggle-container">
+                <button id="btn-prev" class="btn btn-secondary" onclick="switchTab('prev')">Bulan Sebelumnya</button>
+                <button id="btn-current" class="btn btn-primary active" onclick="switchTab('current')">Bulan Ini</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ==================================== -->
     <!-- BAGIAN 1: BULAN INI (4 Profil) -->
     <!-- ==================================== -->
-    <h2>Awardee Bulan Ini</h2>
     
-    <!-- Profil Awardee 1 -->
-    <div>
-        <h3>Awardee Profile 1</h3>
+
+    <div id="panel-bulan-ini" class="container awardee-panel active">
+        <h2 class="section-title text-center mb-4">Awardee Bulan Ini</h2><br>
         
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Pengguna 1" width="50" height="50">
-                <strong>User Name 1</strong><br>
-                <small>John Doe</small><br>
-                <small>Verified Contributor</small>
+        <div class="awardee-grid">
+            <div class="awardee-card">
+                <h3 class="card-title">Awardee Profile 1</h3>
+                
+                <div class="card-split">
+                    <div class="split-left">
+                        <img src="placeholder_avatar.png" alt="Avatar" class="avatar-small">
+                        <div class="user-meta">
+                            <strong>User Name 1</strong>
+                            <small class="text-muted">John Doe</small>
+                            <span class="badge">Verified Contributor</span>
+                        </div>
+                    </div>
+
+                    <div class="split-right">
+                        <strong>Achievement Snippet</strong>
+                        <p>For exceptional performance in community engagement.</p>
+                    </div>
+                </div>
+                
+                <hr class="divider">
+                
+                <div class="card-highlight">
+                    <img src="placeholder_avatar.png" alt="Avatar" class="avatar-medium">
+                    <div class="highlight-content">
+                        <strong>John Doe</strong>
+                        <small class="text-blue">Honorable Mention | Verified</small>
+                        <p>An exemplary community member, dedicated to sharing knowledge.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-sm">Ikuti</a>
+                </div>
             </div>
 
-            <div>
-                <strong>Achievement Snippet</strong>
-                <p>For exceptional performance in community engagement.</p>
+            <div class="awardee-card">
+                <h3 class="card-title">Awardee Profile 2</h3>
+                <div class="card-split">
+                    <div class="split-left">
+                        <img src="placeholder_avatar.png" alt="Avatar" class="avatar-small">
+                        <div class="user-meta">
+                            <strong>User Name 2</strong>
+                            <small class="text-muted">Alice B.</small>
+                            <span class="badge">Verified Contributor</span>
+                        </div>
+                    </div>
+                    <div class="split-right">
+                        <strong>Achievement Snippet</strong>
+                        <p>Recognized for outstanding support in the help forums.</p>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="card-highlight">
+                    <img src="placeholder_avatar.png" alt="Avatar" class="avatar-medium">
+                    <div class="highlight-content">
+                        <strong>Alice B.</strong>
+                        <small class="text-blue">Honorable Mention | Verified</small>
+                        <p>A helpful guide to new users and a source of positive feedback.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-sm">Ikuti</a>
+                </div>
             </div>
-        </div>
-        
-        <hr>
-        
-        <div>
-            <img src="placeholder_avatar.png" alt="Avatar John Doe" width="70" height="70">
-            <strong>John Doe</strong><br>
-            <small>Honorable Mention | Verified</small>
-            <p>An exemplary community member, dedicated to sharing knowledge.</p>
-            <a href="#"><button>Ikuti</button></a>
+
+            <div class="awardee-card">
+                <h3 class="card-title">Awardee Profile 3</h3>
+                <div class="card-split">
+                    <div class="split-left">
+                        <img src="placeholder_avatar.png" alt="Avatar" class="avatar-small">
+                        <div class="user-meta">
+                            <strong>User Name 3</strong>
+                            <small class="text-muted">Charlie D.</small>
+                            <span class="badge">Verified Contributor</span>
+                        </div>
+                    </div>
+                    <div class="split-right">
+                        <strong>Achievement Snippet</strong>
+                        <p>Awarded for high-quality, long-term submissions.</p>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="card-highlight">
+                    <img src="placeholder_avatar.png" alt="Avatar" class="avatar-medium">
+                    <div class="highlight-content">
+                        <strong>Charlie D.</strong>
+                        <small class="text-blue">Honorable Mention | Verified</small>
+                        <p>Veteran contributor known for thoughtful and insightful entries.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-sm">Ikuti</a>
+                </div>
+            </div>
+
+            <div class="awardee-card">
+                <h3 class="card-title">Awardee Profile 4</h3>
+                <div class="card-split">
+                    <div class="split-left">
+                        <img src="placeholder_avatar.png" alt="Avatar" class="avatar-small">
+                        <div class="user-meta">
+                            <strong>User Name 4</strong>
+                            <small class="text-muted">Eva F.</small>
+                            <span class="badge">Verified Contributor</span>
+                        </div>
+                    </div>
+                    <div class="split-right">
+                        <strong>Achievement Snippet</strong>
+                        <p>Received honor for creative use of media in submissions.</p>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="card-highlight">
+                    <img src="placeholder_avatar.png" alt="Avatar" class="avatar-medium">
+                    <div class="highlight-content">
+                        <strong>Eva F.</strong>
+                        <small class="text-blue">Honorable Mention | Verified</small>
+                        <p>Creative storyteller and dedicated member of the community.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-sm">Ikuti</a>
+                </div>
+            </div>
         </div>
     </div>
-    <hr>
-
-    <!-- Profil Awardee 2 -->
-    <div>
-        <h3>Awardee Profile 2</h3>
-        
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Pengguna 2" width="50" height="50">
-                <strong>User Name 2</strong><br>
-                <small>Alice B.</small><br>
-                <small>Verified Contributor</small>
-            </div>
-
-            <div>
-                <strong>Achievement Snippet</strong>
-                <p>Recognized for outstanding support in the help forums.</p>
-            </div>
-        </div>
-        
-        <hr>
-        
-        <div>
-            <img src="placeholder_avatar.png" alt="Avatar Alice B." width="70" height="70">
-            <strong>Alice B.</strong><br>
-            <small>Honorable Mention | Verified</small>
-            <p>A helpful guide to new users and a source of positive feedback.</p>
-            <a href="#"><button>Ikuti</button></a>
-        </div>
-    </div>
-    <hr>
-
-    <!-- Profil Awardee 3 -->
-    <div>
-        <h3>Awardee Profile 3</h3>
-        
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Pengguna 3" width="50" height="50">
-                <strong>User Name 3</strong><br>
-                <small>Charlie D.</small><br>
-                <small>Verified Contributor</small>
-            </div>
-
-            <div>
-                <strong>Achievement Snippet</strong>
-                <p>Awarded for high-quality, long-term submissions to the platform.</p>
-            </div>
-        </div>
-        
-        <hr>
-        
-        <div>
-            <img src="placeholder_avatar.png" alt="Avatar Charlie D." width="70" height="70">
-            <strong>Charlie D.</strong><br>
-            <small>Honorable Mention | Verified</small>
-            <p>Veteran contributor known for thoughtful and insightful entries.</p>
-            <a href="#"><button>Ikuti</button></a>
-        </div>
-    </div>
-    <hr>
-
-    <!-- Profil Awardee 4 -->
-    <div>
-        <h3>Awardee Profile 4</h3>
-        
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Pengguna 4" width="50" height="50">
-                <strong>User Name 4</strong><br>
-                <small>Eva F.</small><br>
-                <small>Verified Contributor</small>
-            </div>
-
-            <div>
-                <strong>Achievement Snippet</strong>
-                <p>Received honor for creative use of media in submissions.</p>
-            </div>
-        </div>
-        
-        <hr>
-        
-        <div>
-            <img src="placeholder_avatar.png" alt="Avatar Eva F." width="70" height="70">
-            <strong>Eva F.</strong><br>
-            <small>Honorable Mention | Verified</small>
-            <p>Creative storyteller and dedicated member of the community.</p>
-            <a href="#"><button>Ikuti</button></a>
-        </div>
-    </div>
-    <hr>
     
-    <!-- ==================================== -->
-    <!-- BAGIAN 2: BULAN SEBELUMNYA (4 Profil) -->
-    <!-- ==================================== -->
-    <h2>Awardee Bulan Sebelumnya</h2>
+    <div id="panel-bulan-lalu" class="container awardee-panel" style="display: none;">
+        <h2 class="section-title text-center mb-4">Awardee Bulan Sebelumnya</h2>
 
-    <!-- Profil Awardee 5 -->
-    <div>
-        <h3>Awardee Profile 5</h3>
-        
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Pengguna 5" width="50" height="50">
-                <strong>User Name 5</strong><br>
-                <small>George H.</small><br>
-                <small>Verified Contributor</small>
+        <div class="awardee-grid">
+            <div class="awardee-card">
+                <h3 class="card-title">Awardee Profile 5</h3>
+                <div class="card-split">
+                    <div class="split-left">
+                        <img src="placeholder_avatar.png" alt="Avatar" class="avatar-small">
+                        <div class="user-meta">
+                            <strong>User Name 5</strong>
+                            <small class="text-muted">George H.</small>
+                            <span class="badge">Verified Contributor</span>
+                        </div>
+                    </div>
+                    <div class="split-right">
+                        <strong>Achievement Snippet</strong>
+                        <p>Honored for consistency and positive impact on other users.</p>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="card-highlight">
+                    <img src="placeholder_avatar.png" alt="Avatar" class="avatar-medium">
+                    <div class="highlight-content">
+                        <strong>George H.</strong>
+                        <small class="text-blue">Honorable Mention | Verified</small>
+                        <p>Known for his reliably inspiring and uplifting content.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-sm">Ikuti</a>
+                </div>
             </div>
-
-            <div>
-                <strong>Achievement Snippet</strong>
-                <p>Honored for consistency and positive impact on other users.</p>
-            </div>
-        </div>
-        
-        <hr>
-        
-        <div>
-            <img src="placeholder_avatar.png" alt="Avatar George H." width="70" height="70">
-            <strong>George H.</strong><br>
-            <small>Honorable Mention | Verified</small>
-            <p>Known for his reliably inspiring and uplifting content.</p>
-            <a href="#"><button>Ikuti</button></a>
         </div>
     </div>
-    <hr>
 
-    <!-- Profil Awardee 6 -->
-    <div>
-        <h3>Awardee Profile 6</h3>
-        
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Pengguna 6" width="50" height="50">
-                <strong>User Name 6</strong><br>
-                <small>Isla J.</small><br>
-                <small>Verified Contributor</small>
-            </div>
-
-            <div>
-                <strong>Achievement Snippet</strong>
-                <p>Awarded for reaching a milestone in community contribution points.</p>
-            </div>
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-brand">
+            Pesan Masa Depan
         </div>
-        
-        <hr>
-        
-        <div>
-            <img src="placeholder_avatar.png" alt="Avatar Isla J." width="70" height="70">
-            <strong>Isla J.</strong><br>
-            <small>Honorable Mention | Verified</small>
-            <p>High-achieving user recognized for reaching major milestones.</p>
-            <a href="#"><button>Ikuti</button></a>
-        </div>
-    </div>
-    <hr>
 
-    <!-- Profil Awardee 7 -->
-    <div>
-        <h3>Awardee Profile 7</h3>
-        
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Pengguna 7" width="50" height="50">
-                <strong>User Name 7</strong><br>
-                <small>Liam M.</small><br>
-                <small>Verified Contributor</small>
+        <div class="footer-nav">
+            <a href="#"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
+            <a href="#"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
+            <a href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            <a href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a href="#"><i class="fas fa-paper-plane"></i> Undang Teman</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-x"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-legal-links">
+                <a href="#">Terms of use</a>
+                <span>·</span>
+                <a href="#">Privacy Policy</a>
             </div>
-
-            <div>
-                <strong>Achievement Snippet</strong>
-                <p>Honored for insightful and deeply personal future letters.</p>
-            </div>
+            <p>Pesan Masa Depan™ brought to you by Kelompok 2 ©2025.</p>
         </div>
-        
-        <hr>
-        
-        <div>
-            <img src="placeholder_avatar.png" alt="Avatar Liam M." width="70" height="70">
-            <strong>Liam M.</strong><br>
-            <small>Honorable Mention | Verified</small>
-            <p>User known for thought-provoking and emotional submissions.</p>
-            <a href="#"><button>Ikuti</button></a>
         </div>
-    </div>
-    <hr>
+    </footer>
+    <script>
+        function switchTab(tab) {
+            const panelCurrent = document.getElementById('panel-bulan-ini');
+            const panelPrev = document.getElementById('panel-bulan-lalu');
+            const btnCurrent = document.getElementById('btn-current');
+            const btnPrev = document.getElementById('btn-prev');
 
-    <!-- Profil Awardee 8 -->
-    <div>
-        <h3>Awardee Profile 8</h3>
-        
-        <div>
-            <div>
-                <img src="placeholder_avatar.png" alt="Avatar Pengguna 8" width="50" height="50">
-                <strong>User Name 8</strong><br>
-                <small>Nora P.</small><br>
-                <small>Verified Contributor</small>
-            </div>
+            if (tab === 'current') {
+                panelCurrent.style.display = 'block';
+                panelPrev.style.display = 'none';
+                
+                // Update Button Styles
+                btnCurrent.classList.add('btn-primary');
+                btnCurrent.classList.remove('btn-secondary');
+                btnPrev.classList.add('btn-secondary');
+                btnPrev.classList.remove('btn-primary');
+            } else {
+                panelCurrent.style.display = 'none';
+                panelPrev.style.display = 'block';
 
-            <div>
-                <strong>Achievement Snippet</strong>
-                <p>Recognized for consistently adhering to platform guidelines and quality standards.</p>
-            </div>
-        </div>
-        
-        <hr>
-        
-        <div>
-            <img src="placeholder_avatar.png" alt="Avatar Nora P." width="70" height="70">
-            <strong>Nora P.</strong><br>
-            <small>Honorable Mention | Verified</small>
-            <p>A model community member known for quality control and helpful moderation.</p>
-            <a href="#"><button>Ikuti</button></a>
-        </div>
-    </div>
-    <hr>
-
-    <!-- Footer Konsisten (Link dikoreksi) -->
-    <div>
-        <a href="tulis_pesanmu.html">Tulis Pesanmu</a> | 
-        <a href="Honorable_mention.html">Baca Pesan Orang</a> | 
-        <a href="login.html">Sign In</a> | 
-        <a href="signup.html">Sign Up</a> | 
-        <a href="#">Undang Teman</a>
-    </div>
-
+                // Update Button Styles
+                btnPrev.classList.add('btn-primary');
+                btnPrev.classList.remove('btn-secondary');
+                btnCurrent.classList.add('btn-secondary');
+                btnCurrent.classList.remove('btn-primary');
+            }
+        }
+    </script>
 </body>
 </html>
