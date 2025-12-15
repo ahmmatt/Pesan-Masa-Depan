@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesan Masa Depan - Artikel Tersimpan</title>
+    <title>Pesan Masa Depan - Artikel Disukai</title>
     <link rel="stylesheet" href="../CSS/style_article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -17,11 +17,11 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="../HTML/halaman_utama_login.html">Home</a></li>
+                <li><a href="../HTML/halaman_utama_belum.html">Home</a></li>
                 <li><a href="tulis_pesanmu.html">Tulis Pesanmu</a></li>
                 <li><a href="Honorable_mention.html">Honorable Mention</a></li>
                 <li><a href="artikel_emosional.html">Artikel Emosional</a></li>
-                <li><a href="artikel_tersimpan.html" class="active">Tersimpan</a></li> 
+                <li><a href="artikel_tersimpan.html">Tersimpan</a></li> 
                 <li><a href="artikel_disukai.html">Disukai</a></li> 
                 <li><a href="rating_kami.html">Rating Kami</a></li>
                 <li><a href="login.html" class="btn-login">Login</a></li>
@@ -34,11 +34,11 @@
         
         <section class="bagian_kiri">
             <div class="tulis_konten_card">
-                <h2>Artikel yang Anda Simpan</h2>
-                <p>Berikut adalah daftar artikel yang telah Anda simpan untuk dibaca nanti.</p>
+                <h2>Artikel yang Anda Suka</h2>
+                <p>Berikut adalah daftar artikel yang telah Anda sukai.</p>
             </div>
 
-            <div id="konten_tersimpan" class="konten_section">
+            <div id="konten_disukai" class="konten_section">
                 </div>
         </section>
 
@@ -55,7 +55,7 @@
                     </div>
                     <a href="#"><button class="btn btn-primary">edit</button></a>
                 </div>
-                  <div class="pengikut">
+                <div class="pengikut">
                     <p>
                         <small>3 postingan</small>
                         <small>67 pengikut</small>
@@ -63,9 +63,10 @@
                     </p>
                 </div>
                 <p>deskripsi...</p>
+
                 <div class="footer_user_profile">
                     <a href="artikel_tersimpan.html"><button class="btn btn-primary">Disimpan</button></a> 
-                    <a href="artikel_disukai.html"><button class="btn btn-primary">Disukai</button></a>
+                    <a href="artikel_disukai.html"><button class="btn btn-primary active">Disukai</button></a>
                 </div>
             </div>
             
@@ -74,7 +75,6 @@
             <div class="recomendation_card">    
                 <div id="rekomendasi">
                     <h2>Rekomendasi</h2>
-
                     <div class="recomend_account">
                         <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 1" width="30" height="30">
                         <div class="account_name">
