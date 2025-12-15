@@ -175,6 +175,26 @@ hr {
     z-index: 10;
 }
 
+#motivasiSection {
+    display: none;
+}
+
+#motivasiSection.active {
+   display: flex;
+}
+
+
+.kotak_emote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SEMBUNYI JIKA BELUM ADA EMOJI */
+.kotak_emote img {
+    width: 60px;
+}
+
 /* --- BAGIAN 1: PILIH EMOSIMU --- */
 .head_Pilih_emote {
     text-align: center;

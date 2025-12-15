@@ -1,4 +1,4 @@
-// --- FUNGSI UTAMA: MENGAMBIL DAN MEMBUAT DATA ARTIKEL DARI KARTU HTML ---
+// FUNGSI UTAMA: MENGAMBIL DAN MEMBUAT DATA ARTIKEL DARI KARTU HTML ---
 function getArticleData(element) {
     const articleCard = element.closest('.konten_card');
     // Pastikan semua data diambil dengan fallback yang aman
@@ -12,11 +12,7 @@ function getArticleData(element) {
     };
 }
 
-
-// =================================================================
-// === FUNGSI UTAMA: SIMPAN (Tersimpan) ============================
-// =================================================================
-
+// FUNGSI UTAMA: SIMPAN (Tersimpan) 
 function simpanArtikel(element) {
     const savedArticleData = getArticleData(element);
     let savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
@@ -63,10 +59,7 @@ function sukaiArtikel(element) {
 }
 window.sukaiArtikel = sukaiArtikel; 
 
-// ----------------------------------------------------------------------
-// --- FUNGSI BARU: Memastikan Tombol Konsisten Saat Halaman Dimuat ---
-// ----------------------------------------------------------------------
-
+//FUNGSI BARU: Memastikan Tombol Konsisten Saat Halaman Dimuat
 function initializeArticleButtons() {
     const savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
     const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
@@ -106,7 +99,7 @@ function initializeArticleButtons() {
 // =================================================================
 
 // --- Bantuan untuk membuat HTML Card (Tidak perlu diubah) ---
-function createCardHTML(article, removeFunction) {
+function createCardHTML(article, removeFunction, imageAltText) {
     return `
         <div class="konten_card" data-article-id="${article.id}">
             <div class="header_konten_section">
@@ -119,7 +112,7 @@ function createCardHTML(article, removeFunction) {
             </div>
             
             <div class="main_konten_section">
-                <img src="placeholder_gambar_artikel.png" alt="Gambar Artikel Tersimpan" width="100" height="70">
+                <img src="placeholder_gambar_artikel.png" alt="${imageAltText}" width="100" height="70">
                 <h3>${article.title}</h3>
                 <p>${article.summary}</p>
                 
@@ -152,7 +145,7 @@ function loadSavedArticles() {
     }
     
     savedArticles.forEach(article => {
-        container.innerHTML += createCardHTML(article, 'removeSavedArticle');
+        container.innerHTML += createCardHTML(article, 'removeSavedArticle', 'Gambar Artikel Disimpan');
     });
 }
 window.loadSavedArticles = loadSavedArticles;
@@ -174,7 +167,7 @@ function loadLikedArticles() {
     }
 
     likedArticles.forEach(article => {
-        container.innerHTML += createCardHTML(article, 'removeLikedArticle');
+        container.innerHTML += createCardHTML(article, 'removeLikedArticle', 'Gambar Artikel Disukai');
     });
 }
 window.loadLikedArticles = loadLikedArticles;
@@ -203,10 +196,10 @@ window.removeSavedArticle = removeSavedArticle;
 function removeLikedArticle(articleIdToRemove) {
     removeArticle('likedArticles', articleIdToRemove, 'loadLikedArticles'); 
 }
-window.removeLikedArticle = removeLikedArticle;
+window.removeLikedArticle = removeLikedArticle; 
 
 
-// --- PEMUATAN AWAL: Panggil fungsi initialization dan load ---
+// PEMUATAN AWAL: Panggil fungsi initialization dan load 
 document.addEventListener('DOMContentLoaded', () => {
     // Dipanggil di artikel_emosional.html untuk mengatur status tombol awal
     if (document.querySelector('.konten_card')) {
