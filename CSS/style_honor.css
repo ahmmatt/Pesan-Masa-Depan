@@ -48,9 +48,6 @@ hr {
 .text-center { text-align: center; }
 .mb-4 { margin-bottom: 2rem; }
 
-.section-spacer {
-    padding: 60px 0;
-}
 
 .section-title {
     font-size: 2.2rem;
@@ -151,7 +148,6 @@ hr {
     align-items: center;
     justify-content: center;
 }
-
 /* Efek Neon Box di tengah Hero */
 .neon-box {
     border: 2px solid var(--neon-glow);
@@ -187,275 +183,182 @@ hr {
     border: 1px solid #eee;
 }
 
-.card-header h3 {
-    color: #166434; /* Warna hijau tua seperti di gambar */
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
-
-.card-header small {
-    display: block;
-    margin-bottom: 20px;
-    color: #888;
-}
-
-.letter-body {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.letter-meta {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.interactions a {
-    margin-right: 15px;
-    font-weight: 600;
-    color: #555;
-}
-
-.letter-nav {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.letter-nav a {
-    color: var(--primary-blue);
-    font-weight: 600;
-}
-
-.cta-wrapper {
+.Honor{
     text-align: center;
 }
 
-/* --- KEUNTUNGAN (FEATURES) GRID --- */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* =========================================
+   AWARDEE CARD SECTION STYLES
+   ========================================= */
+
+/* Navigasi Toggle */
+.toggle-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Grid Layout untuk Kartu */
+.awardee-grid {
+    display: flex;
+    flex-direction: column;
     gap: 30px;
-    text-align: center;
-    padding: 20px 0;
+    margin-bottom: 60px;
 }
 
-.feature-item {
-    padding: 20px;
+/* Style Kartu Utama */
+.awardee-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Soft Shadow */
+    border: 1px solid #eee;
+    transition: transform 0.2s ease;
 }
 
-.icon-circle {
-    /* --- Layout (Tetap Sama) --- */
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    
-    /* --- Glassmorphism Style --- */
-    background: rgba(150, 150, 150, 0.2); 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    color: #555;
-
-    /* --- TAMBAHAN WAJIB UNTUK ANIMASI --- */
-    /* Agar perubahan saat disentuh mouse terasa halus */
-    transition: all 0.3s ease;
-    cursor: pointer;
+.awardee-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* --- EFEK HOVER (Saat Mouse Diarahkan) --- */
-.icon-circle:hover {
-    /* 1. Lingkaran naik ke atas sedikit (Melayang) */
-    transform: translateY(-8px);
-
-    /* 2. Background jadi sedikit lebih pekat */
-    background: rgba(150, 150, 150, 0.3);
-
-    /* 3. Border jadi putih solid (lebih bercahaya) */
-    border-color: #ffffff;
-
-    /* 4. Bayangan membesar (efek 3D lebih dalam) */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-
-    /* 5. Warna Icon berubah jadi Biru Utama */
-    color: #5D9CEC; 
-}
-
-.feature-item h2 {
+.card-title {
     font-size: 1.2rem;
-    margin-bottom: 5px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-dark);
 }
 
-/* --- SEMUA FITUR (CARDS) --- */
-.feature-list-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+/* Layout Bagian Atas (Split Kiri-Kanan) */
+.card-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
 }
 
-.feature-card {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #eaeaea;
-    transition: 0.3s;
-    position: relative;
-    overflow: hidden;
+/* Kolom Kiri: Avatar & User Info */
+.split-left {
+    display: flex;
+    gap: 15px;
+    width: 45%;
 }
 
-.feature-card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border-color: var(--primary-blue);
+.avatar-small {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px; /* Sesuai gambar referensi kotak rounded */
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.user-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-meta strong {
+    font-size: 1rem;
+    color: var(--text-dark);
 }
 
 .badge {
-    background: #eee;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #555;
     display: inline-block;
-    margin-bottom: 10px;
+    background-color: #e2e8f0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+    width: fit-content;
 }
 
-.feature-card h2 { font-size: 1.1rem; color: #888; font-weight: 400; margin-bottom: 10px;}
-.feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
-.feature-card p { font-size: 0.95rem; color: #666; margin-bottom: 20px; }
-.link-arrow { color: var(--primary-blue); font-weight: 600; font-size: 0.9rem; }
-
-/* --- TESTIMONIALS SECTION (UPDATED) --- */
-.testimonials-section {
-    padding: 40px 0;
-    overflow: hidden; /* Mencegah scrollbar horizontal pada halaman */
+/* Kolom Kanan: Achievement */
+.split-right {
+    width: 50%;
+    background-color: var(--bg-light); /* Background abu tipis */
+    padding: 15px;
+    border-radius: 8px;
 }
 
-/* Wrapper untuk membagi area Teks (Kiri) dan Kartu Berjalan (Kanan) */
-.testimonial-flex-container {
-    display: flex;
-    align-items: center;
-    max-width: 100%; /* Full width agar animasi mulus */
-    gap: 40px;
-}
-
-/* Bagian Teks Judul (Kiri) */
-.testimonial-text-area {
-    width: 45%; /* Mengambil 35% lebar layar */
-    padding-left: 5%; /* Padding agar tidak terlalu mepet kiri */
-    flex-shrink: 0;
-    z-index: 2;
-
-}
-
-.testimonial-text-area h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #000;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-
-.testimonial-text-area p {
-    color: #666;
-    font-size: 1rem;
-}
-
-/* Area Animasi Kartu (Kanan) */
-.testimonial-marquee-wrapper {
-    width: 65%; /* Sisa lebar layar */
-    overflow: hidden; /* Menyembunyikan kartu yang keluar jalur */
-    position: relative;
-    padding: 20px 0;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Efek fade di pinggir */
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-/* Track/Jalur Animasi */
-.marquee-track {
-    display: flex;
-    gap: 20px;
-    width: max-content;
-    /* Animasi berjalan */
-    animation: scrollLeftToRight 25s linear infinite; 
-}
-
-/* Keyframes untuk gerak Kiri ke Kanan */
-@keyframes scrollLeftToRight {
-    0% {
-        transform: translateX(-50%); /* Mulai dari posisi tengah set */
-    }
-    100% {
-        transform: translateX(0); /* Berjalan ke arah kanan (0) */
-    }
-}
-
-/* Kartu Testimonial */
-.testimonial-card {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    width: 320px; /* Lebar tetap agar tidak gepeng */
-    flex-shrink: 0; /* Mencegah kartu mengecil */
-    border: none;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-right: 12px;
-    background-color: #ddd;
-    object-fit: cover;
-}
-
-.user-details h4 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    margin: 0;
-    color: #333;
-}
-
-.stars {
-    color: #FFD700;
-    font-size: 0.8rem;
-    margin-top: 2px;
+.split-right strong {
     display: block;
-}
-
-.testimonial-card p {
     font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-    font-style: normal;
+    margin-bottom: 5px;
+    color: var(--text-dark);
 }
 
-/* Hover Paused: Animasi berhenti saat mouse di atas kartu */
-.marquee-track:hover {
-    animation-play-state: paused;
+.split-right p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
 }
 
+/* Divider Custom */
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 25px 0;
+}
+
+/* Layout Bagian Bawah (Highlight User) */
+.card-highlight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar-medium {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Avatar bulat di bawah */
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.highlight-content {
+    flex: 1;
+}
+
+.highlight-content strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.text-blue {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.highlight-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .card-split {
+        flex-direction: column;
+    }
+    
+    .split-left, .split-right {
+        width: 100%;
+    }
+    
+    .card-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .btn-sm {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
 /* --- FOOTER (UPDATED - LEFT ALIGNED) --- */
 .footer {
     background: var(--white);
@@ -541,25 +444,6 @@ hr {
     color: #999;
 }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
-@media (max-width: 992px) {
-    .testimonial-flex-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .testimonial-text-area {
-        width: 100%;
-        padding: 0 20px;
-        margin-bottom: 30px;
-    }
-    
-    .testimonial-marquee-wrapper {
-        width: 100%;
-        mask-image: none; /* Hilangkan mask pada mobile agar full width */
-    }
-}
-
 /* --- FOOTER --- */
 .footer {
     background: var(--white);
@@ -575,22 +459,21 @@ hr {
 
 /* --- RESPONSIVE (MEDIA QUERIES) --- */
 @media (max-width: 992px) {
-    .features-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     .hero-section { height: 400px; }
     .neon-box { width: 90%; }
 }
 
 @media (max-width: 768px) {
-    .features-grid, .testimonials-grid { grid-template-columns: 1fr; }
     .navbar-content { flex-direction: column; }
     .nav-links { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
     .letter-card { padding: 20px; margin-top: -30px; }
     .section-title { font-size: 1.8rem; }
 }
 
-/* ===========
-  Burger Menu
-   ========== */
+/* =================================================================
+   SOLUSI FINAL CSS BURGER MENU (Override Total Posisi)
+   Ini menggunakan positioning untuk menjamin posisi di KANAN ATAS.
+   ================================================================= */
 
 /* --- 1. Memastikan Tata Letak Horizontal di Desktop (Sesuai Kebutuhan) --- */
 .navbar-content {
@@ -724,4 +607,3 @@ hr {
         overflow: hidden !important;
     }
 }
-
