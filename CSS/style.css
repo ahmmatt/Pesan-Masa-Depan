@@ -421,11 +421,35 @@ hr {
     margin-bottom: 15px;
 }
 
-.avatar {
+.avatar2 {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     margin-right: 12px;
+    background-image: url('../Img/1.png');
+    background-size: 45px;
+    background-color: #ddd;
+    object-fit: cover;
+}
+
+.avatar1 {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-image: url('../Img/4.png');
+    background-size: 45px;
+    background-color: #ddd;
+    object-fit: cover;
+}
+
+.avatar3 {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-image: url('../Img/5.png');
+    background-size: 45px;
     background-color: #ddd;
     object-fit: cover;
 }
