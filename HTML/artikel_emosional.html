@@ -34,8 +34,8 @@
                 
                 <div class="timeline_section">
                     <h3>
-                        <a href="#konten_feed">Untukmu</a>
-                        <a href="#konten_feed">Mengikuti</a>
+                          <a href="#" id="tabUntukmu" class="active">Untukmu</a>
+                          <a href="#" id="tabMengikuti">Mengikuti</a>
                     </h3>
                 </div>
                 
@@ -51,17 +51,24 @@
                             <label for="post_content">Apa yang terjadi?</label>
                             <textarea id="post_content" name="post_content" rows="3" cols="50" placeholder="Tuliskan pikiran Anda di sini..."></textarea>
                             
-                            <label for="upload_file">+</label>
-                            <input type="file" id="upload_file" name="berkas_saya">
+                            <div class="file-upload">
+                            <button type="button" id="btnUpload" class="upload-icon">
+                             <i class="fas fa-plus"></i>
+                            </button>
 
-                            <hr>
-                            <a href="#"><button class="btn btn-primary">Kirim</button></a>
+                            <input type="file" id="upload_file" name="berkas_saya" hidden>
+                            <span id="fileName"></span>
                         </div>
+                        <hr>
+                        <button type="submit" class="btn btn-primary">Kirim</button> 
+                </form>
                     </form>
                 </div>
                 
-                <div class="konten_section">    
+                <div class="konten_section untukmu">
+                    <div id="kontenMengikuti" style="display:none;"></div>
                     <div class="konten_card" 
+                         data-user="username"
                          data-article-id="art_001" 
                          data-title="The Future of Technology (Card 1)" 
                          data-author="Name"
@@ -73,7 +80,7 @@
                                 <strong>Name</strong> 
                                 <small>@username</small>
                             </div>
-                            <a href="#"><button class="btn btn-primary">Ikuti</button></a>
+                            <button class="btn btn-primary btn-ikuti">Ikuti</button>
                         </div>
                         <div class="main_konten_section">
                             <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
@@ -87,140 +94,150 @@
                         
                         <hr>
                         <div class="footer_konten_section"> 
-                            <p>
                                 <a href="#" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
-                                <a href="#"><i class="fas fa-comment"></i> Komentar</a> 
+                                <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
                                 <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a>
                                 <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
                                     <i class="fas fa-save"></i> Simpan
                                 </a>
-                            <div class="bawah_like">    
+                            <div class="bawah_like">
                                 <small>2,430 suka</small>
                                 <small>Tanggal Hari Ini</small>
                             </div>
-                            </p>
+
+                        </div>
+                        <div class="komentar-wrapper" style="display:none;">
+                            <div class="daftar-komentar"></div>
+
+                            <div class="form-komentar">
+                             <input 
+                                type="text" 
+                                class="input-komentar" 
+                                placeholder="Tulis komentar..." />
+                             <button class="btn btn-primary btn-kirim-komentar">
+                                Kirim
+                             </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="konten_section">    
-                    <div class="konten_card"
-                         data-article-id="art_002"
-                         data-title="The Future of Technology (Card 2 - Data from source)"
-                         data-author="John Doe"
+                <div class="konten_section untukmu">
+                    <div id="kontenMengikuti" style="display:none;"></div>
+                    <div class="konten_card" 
+                         data-user="username"
+                         data-article-id="art_001" 
+                         data-title="The Future of Technology (Card 1)" 
+                         data-author="Name"
                          data-summary="Exploring what lies ahead in tech."
                          data-tags="[AI] [Innovation]">
+                        <div class="header_konten_section">
+                            <img src="placeholder_avatar.png" alt="Avatar Name" width="40" height="40">
+                            <div class="konten_account">
+                                <strong>Name</strong> 
+                                <small>@username</small>
+                            </div>
+                            <button class="btn btn-primary btn-ikuti">Ikuti</button>
+                        </div>
                         <div class="main_konten_section">
                             <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
+                            
                             <h3>The Future of Technology</h3>
                             <p>Exploring what lies ahead in tech.</p>
+                            
                             <small>[AI] [Innovation]</small><br>
                             <small>John Doe</small>
                         </div>
-    
+                        
                         <hr>
                         <div class="footer_konten_section"> 
-                            <p>
-                            <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a> 
-                            <a href="#" class="btn-simpan" 
-                            onclick="simpanArtikel(this)">
-                                <i class="fas fa-save"></i> Simpan
-                            </a>
-                            
-                            <div class="bawah_like">    
+                                <a href="#" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
+                                <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
+                                <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a>
+                                <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
+                                    <i class="fas fa-save"></i> Simpan
+                                </a>
+                            <div class="bawah_like">
                                 <small>2,430 suka</small>
                                 <small>Tanggal Hari Ini</small>
                             </div>
-                            </p>
+
+                        </div>
+                        <div class="komentar-wrapper" style="display:none;">
+                            <div class="daftar-komentar"></div>
+
+                            <div class="form-komentar">
+                             <input 
+                                type="text" 
+                                class="input-komentar" 
+                                placeholder="Tulis komentar..." />
+                             <button class="btn btn-primary btn-kirim-komentar">
+                                Kirim
+                             </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="konten_section">    
-                    <div class="konten_card"
-                         data-article-id="art_003"
-                         data-title="Finding Balance in Life"
-                         data-author="Jane Smith"
-                         data-summary="Tips praktis untuk mengelola stres dan menemukan kedamaian batin."
-                         data-tags="[Health] [Mindfulness]">
+
+                <div class="konten_section untukmu">
+                    <div id="kontenMengikuti" style="display:none;"></div>
+                    <div class="konten_card" 
+                         data-user="username"
+                         data-article-id="art_001" 
+                         data-title="The Future of Technology (Card 1)" 
+                         data-author="Name"
+                         data-summary="Exploring what lies ahead in tech."
+                         data-tags="[AI] [Innovation]">
                         <div class="header_konten_section">
                             <img src="placeholder_avatar.png" alt="Avatar Name" width="40" height="40">
                             <div class="konten_account">
-                                <strong>Jane Smith</strong> 
-                                <small>@janesmith</small>
+                                <strong>Name</strong> 
+                                <small>@username</small>
                             </div>
-                            <a href="#"><button class="btn btn-primary">Ikuti</button></a>
+                            <button class="btn btn-primary btn-ikuti">Ikuti</button>
                         </div>
                         <div class="main_konten_section">
                             <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
                             
-                            <h3>Finding Balance in Life</h3>
-                            <p>Tips praktis untuk mengelola stres dan menemukan kedamaian batin.</p>
+                            <h3>The Future of Technology</h3>
+                            <p>Exploring what lies ahead in tech.</p>
                             
-                            <small>[Health] [Mindfulness]</small><br>
-                            <small>Jane Smith</small>
+                            <small>[AI] [Innovation]</small><br>
+                            <small>John Doe</small>
                         </div>
                         
                         <hr>
                         <div class="footer_konten_section"> 
-                            <p>
                                 <a href="#" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
-                                <a href="#"><i class="fas fa-comment"></i> Komentar</a> 
+                                <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
                                 <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a>
                                 <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
                                     <i class="fas fa-save"></i> Simpan
                                 </a>
-                            <div class="bawah_like">    
-                                <small>1,500 suka</small>
+                            <div class="bawah_like">
+                                <small>2,430 suka</small>
                                 <small>Tanggal Hari Ini</small>
                             </div>
-                            </p>
+
+                        </div>
+                        <div class="komentar-wrapper" style="display:none;">
+                            <div class="daftar-komentar"></div>
+
+                            <div class="form-komentar">
+                             <input 
+                                type="text" 
+                                class="input-komentar" 
+                                placeholder="Tulis komentar..." />
+                             <button class="btn btn-primary btn-kirim-komentar">
+                                Kirim
+                             </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="konten_section">    
-                    <div class="konten_card"
-                         data-article-id="art_004"
-                         data-title="Embracing Personal Growth"
-                         data-author="Alex Johnson"
-                         data-summary="Panduan untuk menerima perubahan dan tumbuh melalui tantangan."
-                         data-tags="[Growth] [Motivation]">
-                        <div class="header_konten_section">
-                            <img src="placeholder_avatar.png" alt="Avatar Name" width="40" height="40">
-                            <div class="konten_account">
-                                <strong>Alex Johnson</strong> 
-                                <small>@alexj</small>
-                            </div>
-                            <a href="#"><button class="btn btn-primary">Ikuti</button></a>
-                        </div>
-                        <div class="main_konten_section">
-                            <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
-                            
-                            <h3>Embracing Personal Growth</h3>
-                            <p>Panduan untuk menerima perubahan dan tumbuh melalui tantangan.</p>
-                            
-                            <small>[Growth] [Motivation]</small><br>
-                            <small>Alex Johnson</small>
-                        </div>
-                        
-                        <hr>
-                        <div class="footer_konten_section"> 
-                            <p>
-                                <a href="#" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
-                                <a href="#"><i class="fas fa-comment"></i> Komentar</a> 
-                                <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a>
-                                <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
-                                    <i class="fas fa-save"></i> Simpan
-                                </a>
-                            <div class="bawah_like">    
-                                <small>800 suka</small>
-                                <small>Tanggal Hari Ini</small>
-                            </div>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
                 
             </div>
         </section>
@@ -236,17 +253,17 @@
                             <small>@username</small>
                         </div>
                     </div>
-                    <a href="#"><button class="btn btn-primary">edit</button></a>
+                    <button class="btn btn-primary" id="btnEditProfile">edit</button>
                 </div>
                 <div class="pengikut">
                     <p>
-                        <small>3 postingan</small>
-                        <small>67 pengikut</small>
-                        <small>2.007 mengikuti</small>
-                    </p>
+                        <small><span id="countPostingan" data-count="3">3</span> postingan</small>
+                        <small><span id="countPengikut" data-count="67">67</span> pengikut</small>
+                        <small><span id="countMengikuti" data-count="2007">2.007</span> mengikuti</small>
+                        </p>
                 </div>
 
-                <p>deskripsi...</p>
+                <p class="profile-dec">deskripsi</p>
 
                 <div class="footer_user_profile">
                     <a href="artikel_tersimpan.html"><button class="btn btn-primary">Disimpan</button></a>
@@ -256,44 +273,52 @@
             
             <hr>
             
-            <div class="recomendation_card">    
+            <div class="recomendation_card">
                 <div id="rekomendasi">
+                    <div class="timeline_section">
+                        <a href="#" class="active">Untukmu</a>
+                        <a href="#">Mengikuti</a>
+                    </div>
+
+                    <div id="kontenUntukmu"></div>
+                    <div id="kontenMengikuti" style="display:none;"></div>
+
                     <h2>Rekomendasi</h2>
 
-                    <div class="recomend_account">
+                    <div class="recommend_account" data-user="Pablo">
                         <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 1" width="30" height="30">
                         <div class="account_name">
                             <strong>Name</strong> 
                             <small>@username</small>
                         </div>
-                        <a href="#"><button class="btn btn-primary">Ikuti</button></a>
+                        <button class="btn btn-primary">Ikuti</button>
                     </div>
-                    
-                    <div class="recomend_account">
+
+                    <div class="recommend_account" data-user="Basyir">
                         <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 2" width="30" height="30">
                         <div class="account_name">
                             <strong>Name</strong> 
                             <small>@username</small>
                         </div>
-                        <a href="#"><button class="btn btn-primary">Ikuti</button></a>
+                        <button class="btn btn-primary">Ikuti</button>
                     </div>
                     
-                    <div class="recomend_account">
+                    <div class="recommend_account" data-user="Elvy">
                         <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 3" width="30" height="30">
                         <div class="account_name">
                             <strong>Name</strong> 
                             <small>@username</small>
                         </div>
-                        <a href="#"><button class="btn btn-primary">Ikuti</button></a>
+                        <button class="btn btn-primary">Ikuti</button>
                     </div>
                     
-                    <div class="recomend_account">
+                    <div class="recommend_account" data-user="firza">
                         <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 4" width="30" height="30">
                         <div class="account_name">
                             <strong>Name</strong> 
                             <small>@username</small>
                         </div>
-                        <a href="#"><button class="btn btn-primary">Ikuti</button></a>
+                        <button class="btn btn-primary">Ikuti</button>
                     </div>
                 </div>
             </div>
@@ -335,5 +360,7 @@
 
     <script src="../JS/menu_burger.js"></script>
     <script src="../JS/tersimpan.js"></script>
+    <script src="../JS/script.artikel.js"></script>
+    <script src="../JS/mengikuti.js"></script>
 </body>
 </html>

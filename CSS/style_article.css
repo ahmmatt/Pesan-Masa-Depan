@@ -92,6 +92,172 @@ hr {
     color: var(--white);
 }
 
+
+/* custom file icon+ */
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Tombol ikon tambah */
+.upload-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.upload-icon:hover {
+    background-color: #4a8bdb;
+    transform: scale(1.05);
+}
+
+/* Nama file */
+#fileName {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-save.active {
+  color: #1d9bf0;
+}
+
+
+/* TAB AKTIF */
+.timeline_section a {
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: #555;
+  margin-right: 15px;
+}
+
+.timeline_section a.active {
+  border-bottom: 3px solid #4a90e2;
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+/* TOMBOL MENGIKUTI */
+.btn.mengikuti {
+  background-color: #b0b0b0;
+}
+
+.btn.mengikuti:hover {
+  background-color: #ffdddd;
+  color: #c00;
+}
+
+.btn.mengikuti:hover::after {
+  content: "";
+}
+
+/* komentar */
+.komentar-wrapper {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.daftar-komentar p {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.form-komentar {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.input-komentar {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+/* edit */
+/* =================================================
+   EDIT PROFIL – CSS KHUSUS (ANTI KETIMPA)
+   ================================================= */
+
+/* Input nama & username */
+.user_profile.edit-mode .profile_name input {
+    width: 100%;
+    max-width: 180px;
+    padding: 6px 10px;
+
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: var(--text-dark);
+
+    outline: none;
+}
+
+/* Spasi username */
+.user_profile.edit-mode .profile_name small input {
+    margin-left: 4px;
+}
+
+/* Focus state */
+.user_profile.edit-mode .profile_name input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(98, 144, 195, 0.25);
+}
+
+/* Textarea deskripsi */
+.user_profile.edit-mode textarea {
+    width: 100%;
+    min-height: 70px;
+    margin-top: 8px;
+    padding: 8px 10px;
+
+    resize: vertical;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+/* Focus textarea */
+.user_profile.edit-mode textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(98, 144, 195, 0.25);
+    outline: none;
+}
+
+/* Tombol edit → simpan (override aman) */
+.user_profile.edit-mode .header_user_profile button {
+    background-color: #28a745; /* hijau simpan */
+}
+
+/* Hover simpan */
+.user_profile.edit-mode .header_user_profile button:hover {
+    background-color: #218838;
+}
+
+
 /* --- NAVBAR --- */
 .navbar {
     position: absolute; /* Overlay on hero */
@@ -209,18 +375,6 @@ body {
 .timeline_section a:hover,
 .timeline_section a:first-child { /* Simulasi tab aktif */
     color: var(--text-dark);
-}
-
-/* Garis bawah pada tab aktif */
-.timeline_section a:first-child::after {
-    content: '';
-    position: absolute;
-    bottom: -16px; /* Menempel di border bawah container */
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-blue);
-    border-radius: 2px;
 }
 
 /* KARTU INPUT & POSTINGAN */
@@ -360,15 +514,7 @@ body {
 }
 
 /* Tombol Edit (Tanpa Absolute) */
-.header_user_profile a button {
-    position: static; /* Kembalikan ke posisi normal */
-    padding: 6px 20px;
-    font-size: 0.85rem;
-    border-radius: 20px;
-    /* Style tambahan agar rapi */
-    background-color: var(--primary-blue); 
-    color: white;
-    border: none;
+.header_user_profile button {
     cursor: pointer;
 }
 .pengikut p {
