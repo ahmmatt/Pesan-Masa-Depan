@@ -92,6 +92,11 @@ hr {
     color: var(--white);
 }
 
+.btn-secondary:hover {
+    background-color: #06111f;
+    transform: translateY(-2px);
+}
+
 /* --- NAVBAR --- */
 .navbar {
     position: absolute; /* Overlay on hero */
@@ -195,7 +200,7 @@ hr {
     width: 60px;
 }
 
-/* --- BAGIAN 1: PILIH EMOSIMU --- */
+/* --- PILIH EMOSIMU --- */
 .head_Pilih_emote {
     text-align: center;
     margin-bottom: 80px; /* Jarak ke bagian bawah */
@@ -203,6 +208,103 @@ hr {
 
 .head_Pilih_emote {
     font-size: 30px;
+}
+
+#btnLike.active i {
+  color: red;
+}
+
+.letter-nav a.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+
+/* =========================
+   KOMENTAR SURAT
+========================= */
+
+#commentSection {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f9f9fb;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.CommentSS{
+    display: flex;
+    gap: 10px;
+}
+
+/* textarea komentar */
+#commentSection textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  transition: all 0.25s ease;
+  background: #fff;
+  font-family: inherit;
+}
+
+/* efek saat mengetik */
+#commentSection textarea:focus {
+  border-color: #6290C3; /* biru tema kamu */
+  box-shadow: 0 0 0 3px rgba(98, 144, 195, 0.2);
+}
+
+/* tombol kirim */
+#submitComment {
+  padding: 8px 28px;
+  border-radius: 20px;
+  border: none;
+  background: #6290C3;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* hover tombol */
+#submitComment:hover {
+  background: #4f7fb0;
+}
+
+/* daftar komentar */
+#commentList {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+/* item komentar */
+#commentList li {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  animation: fadeIn 0.3s ease;
+}
+
+/* animasi komentar muncul */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Style Awal */
@@ -338,19 +440,26 @@ hr {
     background: var(--white);
     border-radius: 12px;
     
-    /* 1. MENGURANGI TINGGI: Kurangi padding atas-bawah (30px), kiri-kanan tetap lega (50px) */
+    /* MENGURANGI TINGGI: Kurangi padding atas-bawah (30px), kiri-kanan tetap lega (50px) */
     padding: 30px 50px; 
     
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
     border: none;
     
-    /* 2. MENAMBAH LEBAR: Naikkan max-width dari 900px ke 1100px */
+    /* MENAMBAH LEBAR: Naikkan max-width dari 900px ke 1100px */
     max-width: 1100px;    
     width: 95%; /* Agar tetap ada jarak di layar kecil */
     
     margin: -60px auto 60px auto; /* Overlap sedikit dikurangi agar proporsional */
     position: relative;
     z-index: 10;
+}
+
+/* tombol mengikuti */
+.btn-follow.following {
+  background-color: #e0e0e0;
+  color: #333;
+  box-shadow: none;
 }
 
 /* Header Kartu - Jarak diperkecil sedikit */
@@ -800,13 +909,6 @@ hr {
     transition: transform 0.3s;
 }
 
-.article-img {
-    width: 80px;
-    height: 80px;
-    background-color: #ddd; /* Placeholder warna abu */
-    border-radius: 8px;
-    flex-shrink: 0;
-}
 
 .article-content h3 {
     font-size: 1rem;
@@ -889,74 +991,52 @@ hr {
     color: #000;
 }
 
-/* --- STATISTIK (TABEL DISULAP JADI KARTU) --- */
-.kolom-rating table {
-    width: 100%;
-    border-collapse: separate; /* Wajib separate agar bisa dikasih jarak */
-    border-spacing: 15px 0;    /* Jarak horizontal antar 'kartu' */
+/* CONTAINER UTAMA */
+.rating-stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Jarak normal di Desktop */
     margin-bottom: 30px;
-    table-layout: fixed;       /* Agar lebar kolom sama rata */
-    margin-left: -15px;        /* Kompensasi margin agar rata kiri */
-    width: calc(100% + 30px);
+    width: 100%;
 }
 
-/* Bagian Atas Kartu (Header Tabel) */
-.kolom-rating th {
-    background-color: #e9ecef; /* Abu-abu seperti di gambar */
+/* KARTU STATISTIK */
+.stat-card {
+    background-color: #f8f9fa; /* Warna latar sedikit abu seperti gambar */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1; /* Agar lebar terbagi rata (3 kolom sama besar) */
     text-align: left;
-    padding: 15px 15px 5px 15px;
-    font-size: 0.85rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* LABEL (Tulisan Kecil) */
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
     color: #666;
-    font-weight: normal;
-    border: 1px solid #d0d7de;
-    border-bottom: none;       /* Hilangkan garis bawah agar nyambung */
-    border-radius: 8px 8px 0 0; /* Sudut tumpul atas */
+    margin-bottom: 5px;
 }
 
-/* Bagian Bawah Kartu (Isi Data) */
-.kolom-rating td {
-    background-color: #e9ecef;
-    text-align: left;
-    padding: 0 15px 15px 15px;
-    font-size: 1.6rem;
+/* ANGKA BESAR */
+.stat-value {
+    display: block;
+    font-size: 2rem;
     font-weight: 700;
     color: #000;
-    border: 1px solid #d0d7de;
-    border-top: none;          /* Hilangkan garis atas agar nyambung */
-    border-radius: 0 0 8px 8px; /* Sudut tumpul bawah */
 }
 
-/* --- FORM ULASAN --- */
-form h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
+/* CSS Form (Supaya rapi di bawahnya) */
+form h3 { margin-top: 0; margin-bottom: 10px; }
 form textarea {
     width: 100%;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
     padding: 15px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    resize: none; /* Mencegah user merubah ukuran */
-    margin-bottom: 8px;
-    outline: none;
-}
-
-form textarea:focus {
-    border-color: #5D9CEC;
-    background-color: #fff;
-}
-
-form p {
-    font-size: 1.0rem;
-    color: #888;
-    margin-bottom: 30px;
-    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f8f9fa;
+    margin-bottom: 10px;
+    resize: none;
 }
 
 /* --- TOMBOL --- */
@@ -977,25 +1057,6 @@ form .btn {
     transition: 0.2s;
 }
 
-
-/* Responsif Mobile */
-@media (max-width: 600px) {
-    .kolom-rating table {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin: 0;
-        width: 100%;
-    }
-    .kolom-rating tbody, .kolom-rating tr, .kolom-rating th, .kolom-rating td {
-        display: block;
-        width: 100%;
-        border-radius: 0;
-        border-bottom: none;
-    }
-    .kolom-rating th { border-radius: 8px 8px 0 0; }
-    .kolom-rating td { border-radius: 0 0 8px 8px; border-bottom: 1px solid #d0d7de; }
-}
 
 /* --- TESTIMONIALS SECTION (UPDATED) --- */
 .testimonials-section {
@@ -1079,11 +1140,35 @@ form .btn {
     margin-bottom: 15px;
 }
 
-.avatar {
+.avatar2 {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     margin-right: 12px;
+    background-image: url('../Img/1.png');
+    background-size: 45px;
+    background-color: #ddd;
+    object-fit: cover;
+}
+
+.avatar1 {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-image: url('../Img/4.png');
+    background-size: 45px;
+    background-color: #ddd;
+    object-fit: cover;
+}
+
+.avatar3 {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-image: url('../Img/5.png');
+    background-size: 45px;
     background-color: #ddd;
     object-fit: cover;
 }
@@ -1225,8 +1310,21 @@ form .btn {
 /* --- RESPONSIVE (MEDIA QUERIES) --- */
 @media (max-width: 992px) {
     .features-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero-section { height: 400px; }
-    .neon-box { width: 90%; }
+    .hero-section {
+        height: 400px; /* Tinggi hero di mobile */
+        padding: 0 20px; /* Tambahan padding di container agar tidak mepet layar */
+    }
+
+    .neon-box { 
+        width: 100%;           /* Pastikan lebar mengikuti container */
+        max-width: 350px;      /* Batasi lebar maksimal agar kotak enak dilihat */
+        margin: 0 auto;        /* Paksa posisi ke tengah secara horizontal */
+        padding: 20px 15px;    /* PENTING: Kecilkan padding (AtasBawah 20px, KiriKanan 15px) */
+    }
+
+    .neon-box h2 {
+        font-size: 1.4rem;     /* Kecilkan font sedikit agar muat */
+    }
 }
 
 @media (max-width: 768px) {
@@ -1237,12 +1335,8 @@ form .btn {
     .section-title { font-size: 1.8rem; }
 }
 
-/* =================================================================
-   SOLUSI FINAL CSS BURGER MENU (Override Total Posisi)
-   Ini menggunakan positioning untuk menjamin posisi di KANAN ATAS.
-   ================================================================= */
 
-/* --- 1. Memastikan Tata Letak Horizontal di Desktop (Sesuai Kebutuhan) --- */
+/* --- Memastikan Tata Letak Horizontal di Desktop (Sesuai Kebutuhan) --- */
 .navbar-content {
     /* Tetap butuh flex untuk desktop */
     display: flex !important; 
@@ -1252,7 +1346,7 @@ form .btn {
     position: relative; /* Penting untuk positioning anak elemen */
 }
 
-/* --- 2. Gaya Dasar Hamburger (Ikon 3 Garis Animasi) --- */
+/* --- Gaya Dasar Hamburger (Ikon 3 Garis Animasi) --- */
 .hamburger {
     display: none; /* Sembunyikan di desktop */
     position: relative;
@@ -1297,10 +1391,37 @@ form .btn {
 }
 
 
-/* --- 3. MOBILE STYLING (Responsive @media) --- */
+/* --- MOBILE STYLING (Responsive @media) --- */
 @media (max-width: 768px) {
+
+    /* 1. Tetap Baris (Row), jangan Column */
+    .rating-stats-container {
+        display: flex;
+        flex-direction: row; /* TETAP KESAMPING */
+        gap: 8px; /* Jarak antar kartu diperkecil agar muat */
+    }
+
+    /* 2. Kartu mengecil */
+    .stat-card {
+        padding: 10px 8px; /* Padding dalam diperkecil drastis */
+        min-width: 0; /* Mencegah kartu meluap keluar layar */
+    }
+
+    /* 3. Tulisan mengecil agar tidak pecah */
+    .stat-label {
+        font-size: 0.7rem; /* Tulisan label jadi kecil */
+        white-space: nowrap; /* Mencegah tulisan turun baris (opsional) */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 4. Angka mengecil sedikit */
+    .stat-value {
+        font-size: 1.4rem; 
+        margin-top: 5px;
+    }
     
-    /* 3A. POSISI BURGER MENU DI KANAN ATAS NAVIGASI */
+    /* POSISI BURGER MENU DI KANAN ATAS NAVIGASI */
     .hamburger {
         display: block !important; 
         position: absolute; /* Posisikan absolut dari .navbar-content */
@@ -1314,7 +1435,7 @@ form .btn {
         position: static;
     }
     
-    /* 3B. NAV LINKS (Sidebar Slide-in) */
+    /* NAV LINKS (Sidebar Slide-in) */
     .nav-links {
         display: block; 
         position: fixed;
@@ -1335,6 +1456,20 @@ form .btn {
         
         overflow-y: auto; 
         z-index: 1000;
+    }
+
+    /* KHUSUS TOMBOL LOGIN & SIGN UP */
+    .nav-links .btn-login,
+    .nav-links .btn-signup {
+        text-align: center;      /* Membuat tulisan ke tengah */
+        margin-top: 10px;        /* Memberi jarak sedikit agar tidak dempet */
+        border: 1px solid rgba(255, 255, 255, 0.5); /* Memperjelas garis kotak */
+    }
+
+    /* Opsional: Menghilangkan garis bawah pemisah khusus untuk area tombol */
+    .nav-links li:has(.btn-login),
+    .nav-links li:has(.btn-signup) {
+        border-bottom: none;
     }
     
     /* Menu Terbuka (Slide in) */

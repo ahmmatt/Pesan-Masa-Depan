@@ -46,47 +46,71 @@
             <div class="">
                 <img src="../Img/beaming-face-with-smiling-eyes.png"
                 data-judul="Tetap Bersinar"
-                data-isi="Senyummu adalah kekuatan yang sederhana namun berarti.">
+                data-isi="Senyummu adalah kekuatan yang sederhana namun berarti."
+                data-tag1="Happy"
+                data-tag2="Smile">
 
                 <img src="../Img/rolling-on-the-floor-laughin.png"
                 data-judul="Nikmati Hidup"
-                data-isi="Tertawa membantu melepas beban di hati.">
+                data-isi="Tertawa membantu melepas beban di hati."
+                data-tag1="Funny"
+                data-tag2="Laugh">
 
                 <img src="../Img/upside-down-face.png"
                 data-judul="Tetap Unik"
-                data-isi="Menjadi berbeda adalah kelebihanmu.">
+                data-isi="Menjadi berbeda adalah kelebihanmu."
+                data-tag1="Silly"
+                data-tag2="Unique">
 
                 <img src="../Img/face-holding-back-tears_.png"
                 data-judul="Kuat Itu Manusiawi"
-                data-isi="Menahan air mata bukan satu-satunya tanda kuat.">
+                data-isi="Menahan air mata bukan satu-satunya tanda kuat."
+                data-tag1="Sad"
+                data-tag2="Emotional">
 
                 <img src="../Img/pensive-face.png"
                 data-judul="Tidak Apa-Apa"
-                data-isi="Merasa sedih bukan berarti kamu lemah.">
+                data-isi="Merasa sedih bukan berarti kamu lemah."
+                data-tag1="Sad"
+                data-tag2="Pensive">
 
                 <img src="../Img/face-with-spiral-eyes.png"
                 data-judul="Tarik Napas"
-                data-isi="Berhenti sejenak juga bagian dari maju.">
+                data-isi="Berhenti sejenak juga bagian dari maju."
+                data-tag1="Dizzy"
+                data-tag2="Overwhelmed">
 
                 <img src="../Img/weary-face.png"
                 data-judul="Istirahat Dulu"
-                data-isi="Lelah bukan berarti menyerah.">
+                data-isi="Lelah bukan berarti menyerah."
+                data-tag1="Tired"
+                data-tag2="Weary">
 
                 <img src="../Img/loudly-crying-face.png"
                     data-judul="Kamu Tidak Sendiri"
-                    data-isi="Menangis adalah bagian dari proses sembuh.">
+                    data-isi="Menangis adalah bagian dari proses sembuh."
+                    data-tag1="Crying"
+                    data-tag2="Sad">
 
                 <img src="../Img/smiling-face-with-hearts.png"
                     data-judul="Penuh Cinta"
-                    data-isi="Kamu pantas mendapatkan kasih sayang.">
+                    data-isi="Kamu pantas mendapatkan kasih sayang."
+                    data-tag1="Love"
+                    data-tag2="Happy">
 
                 <img src="../Img/star-struck.png"
                     data-judul="Terus Bermimpi"
-                    data-isi="Mimpimu layak diperjuangkan.">
+                    data-isi="Mimpimu layak diperjuangkan."
+                    data-tag1="Excited"
+                    data-tag2="Dreamy">
 
                 <img src="../Img/pouting-face.png"
                     data-judul="Tenangkan Diri"
-                    data-isi="Marah boleh, menyakiti diri tidak.">
+                    data-isi="Marah boleh, menyakiti diri tidak."
+                    data-tag1="Angry"
+                    data-tag2="Upset">
+
+
             </div>
 
         </div>
@@ -105,8 +129,8 @@
                     <p id="isimotivasi">
                         Terimalah dirimu apa adanya, dan biarkan cahayamu bersinar.
                     </p>
-                    <div class="tag_motivasi"><small>Self Love</small></div>
-                    <div class="tag_motivasi"><small>Inspiration</small></div>
+                    <div class="tag_motivasi"><small id="tag1">Self Love</small></div>
+                    <div class="tag_motivasi"><small id="tag2">Inspiration</small></div>
                 </div>
             </div>
             
@@ -121,34 +145,30 @@
                 <small id="waktusurat">Waktu yang dilalui — hampir 3 tahun</small>
             </div>
             
-             <p class="letter-body" id="isisurat">
-                Untuk diriku di masa depan. Apa kabar? Semoga sehat ya diriku, oh ya bagaimana dah tercapai belum dengan
-                sixpack nya? Kalau udah tingkat kan lagi dan bagus kan lagi mana tau kan ada yang srek kita kan bisex, kalau 
-                belum ayo bangun sixpacknya ini kan cita cita mu dari dulu!!! Kerja dengan keras, semoga selalu sukses diriku 
-                dimasa depan pokoknya dalam 1 tahun sixpack dah harus ada ya 😎😎😎 jangan lupa nikah juga nanti kalau sudah 
-                punya anak ajarkan juga di ngegym biar dia bisa pamer sama kawannya. Semoga cita cita ku tercapai !!! 
-                AMIN Dari diriku di masa lalu Thks ya bro
-            </p>
+            <p class="letter-body" id="isisurat"> </p>
             
             <div class="letter-meta">
                 <div class="interactions">
                     <a href="#" id="btnLike"><i class="fas fa-heart"></i> <span id="likeCount">22</span></a>
                     <a href="#" id="btnComment"><i class="fas fa-comment"></i> Komentar</a> 
-                    <a href="#" id="btnShare"><i class="fas fa-share"></i>3</a> 
+                    <a href="#" id="btnShare"><i class="fas fa-share"></i> <span id="shareCount">3</span></a> 
                 </div>
+
                 <span class="date" id="tanggalsurat"></span>
             </div>
             
            <div id="commentSection" style="display:none;">
-                <textarea id="commentInput" placeholder="Tulis komentar..."></textarea>
-                <button id="submitComment">Kirim</button>
                 <ul id="commentList"></ul>
+                <div class="CommentSS">
+                    <textarea id="commentInput" placeholder="Tulis komentar..."></textarea>
+                    <button id="submitComment">Kirim</button>
+                </div>
             </div>
             <div class="letter-nav">
-                <a href="" id="btnPrev"><i class="fas fa-arrow-left"></i>    Sebelumnya</a> 
-                <a href="" id="btnNext">Selanjutnya    <i class="fas fa-arrow-right"></i></a>
+                <a href="#" id="btnPrev"><i class="fas fa-arrow-left"></i> Sebelumnya</a>
+                <a href="#" id="btnNext">Selanjutnya <i class="fas fa-arrow-right"></i></a>
             </div>
-            
+
             <div class="cta-wrapper">
                 <a href="../HTML/tulis_pesanmu.html"><button class="btn btn-primary">MULAI TULIS PESAN MILIKMU</button></a>
             </div>
@@ -167,64 +187,66 @@
             <div class="vertical-track">
                 
                 <div class="article-card">
-                    <div class="article-img"></div>
                     <div class="article-content">
-                        <h3>The Future of Technology</h3>
-                        <p>Exploring what lies ahead in tech.</p>
-                        <div class="tags"><small>AI</small><small>Innovation</small></div>
+                        <h3>Sepi di Tengah Sempurna</h3>
+                        <p>Ngeri nggak sih? Kalau nanti AI bisa lakuin semua hal—nulis, gambar, bahkan 'sayang' 
+                                    sama kita—terus manusia gunanya apa? Aku takut kita bakal hidup di dunia yang serba sempurna tapi palsu. 
+                                    Kita makin akrab sama mesin yang selalu 'ngerti', tapi makin asing sama manusia lain. Rasanya kayak pelan-pelan kita 
+                                    cuma jadi penonton di kehidupan sendiri, digantikan oleh algoritma.</p>
+                        <div class="tags"><small>DistopiaDigital</small><small>HilangnyaKemanusiaan</small></div>
                         <small class="author">John Doe</small>
                     </div>
                 </div>
 
                 <div class="article-card">
-                    <div class="article-img"></div>
                     <div class="article-content">
-                        <h3>The Impact of Design</h3>
-                        <p>How design shapes our daily experiences.</p>
-                        <div class="tags"><small>UX</small><small>Design</small></div>
-                        <small class="author">Jane Smith</small>
+                        <h3>Tragedi File Final_Banget_V12</h3>
+                        <p>Sumpah, kepalaku rasanya mau meledak. Awalnya bilang 'terserah desainer', giliran dikasih hasil bagus, revisinya malah ngerusak konsep. Paling bikin emosi itu pas dibilang, 'Kurang nendang, coba logonya digedein tapi jangan makan tempat.' Maksudnya gimana coba? Fileku udah ganti nama dari Final.jpg sampai Final_Bismillah_Acc_V12.jpg. Rasanya percuma punya skill kalau ujung-ujungnya cuma jadi robot yang disuruh geser gambar ke kiri-kanan seharian.</p>
+                        <div class="tags"><small>DesignerLife</small><small>BudakRevisi</small></div>
+                        <small class="author">Sarah M.</small>
                     </div>
                 </div>
 
                 <div class="article-card">
-                    <div class="article-img"></div>
                     <div class="article-content">
-                        <h3>Navigating Change</h3>
-                        <p>Strategies for managing life transitions.</p>
-                        <div class="tags"><small>Growth</small><small>Life</small></div>
-                        <small class="author">Emily R.</small>
+                        <h3>Dilema Sang "Goblin" (Padahal Cuma Jalankan Perintah)</h3>
+                        <p>Sakit hati banget rasanya tiap buka sosmed. Muka gue diedit jadi hijau, kuping panjang, dikatain Goblin pengeruk tanah. Kalian pikir gue nebang pohon itu hobi? Ini tuh arahan Bos Besar! Target investasi harus masuk, hilirisasi harus jalan. Kalau hutan harus rata tanah demi angka pertumbuhan ekonomi, ya itu harga yang harus dibayar. Banjir atau bencana? Ya anggap aja itu cobaan alam, jangan salahin gue melulu. Gue ini cuma eksekutor yang kejepit. Kalau target nggak nyampe, gue diamuk atasan. Giliran gue kerja keras ratain lahan, malah dijadiin meme satu negara. Serba salah emang jadi abdi negara.</p>
+                        <div class="tags"><small>TumbalInvestasi</small><small>BukanSalahGue</small></div>
+                        <small class="author">Bahlil Lahadia</small>
                     </div>
                 </div>
 
                 <div class="article-card">
-                    <div class="article-img"></div>
                     <div class="article-content">
-                        <h3>The Future of Technology</h3>
-                        <p>Exploring what lies ahead in tech.</p>
-                        <div class="tags"><small>AI</small><small>Innovation</small></div>
+                        <h3>Sepi di Tengah Sempurna</h3>
+                        <p>Ngeri nggak sih? Kalau nanti AI bisa lakuin semua hal—nulis, gambar, bahkan 'sayang' 
+                                    sama kita—terus manusia gunanya apa? Aku takut kita bakal hidup di dunia yang serba sempurna tapi palsu. 
+                                    Kita makin akrab sama mesin yang selalu 'ngerti', tapi makin asing sama manusia lain. Rasanya kayak pelan-pelan kita 
+                                    cuma jadi penonton di kehidupan sendiri, digantikan oleh algoritma.</p>
+                        <div class="tags"><small>DistopiaDigital</small><small>HilangnyaKemanusiaan</small></div>
                         <small class="author">John Doe</small>
                     </div>
                 </div>
 
                 <div class="article-card">
-                    <div class="article-img"></div>
                     <div class="article-content">
-                        <h3>The Impact of Design</h3>
-                        <p>How design shapes our daily experiences.</p>
-                        <div class="tags"><small>UX</small><small>Design</small></div>
-                        <small class="author">Jane Smith</small>
+                        <h3>Tragedi File Final_Banget_V12</h3>
+                        <p>Sumpah, kepalaku rasanya mau meledak. Awalnya bilang 'terserah desainer', giliran dikasih hasil bagus, revisinya malah ngerusak konsep. Paling bikin emosi itu pas dibilang, 'Kurang nendang, coba logonya digedein tapi jangan makan tempat.' Maksudnya gimana coba? Fileku udah ganti nama dari Final.jpg sampai Final_Bismillah_Acc_V12.jpg. Rasanya percuma punya skill kalau ujung-ujungnya cuma jadi robot yang disuruh geser gambar ke kiri-kanan seharian.</p>
+                        <div class="tags"><small>DesignerLife</small><small>BudakRevisi</small></div>
+                        <small class="author">Sarah M.</small>
                     </div>
                 </div>
 
                 <div class="article-card">
-                    <div class="article-img"></div>
                     <div class="article-content">
-                        <h3>Navigating Change</h3>
-                        <p>Strategies for managing life transitions.</p>
-                        <div class="tags"><small>Growth</small><small>Life</small></div>
-                        <small class="author">Emily R.</small>
+                        <h3>Dilema Sang "Goblin" (Padahal Cuma Jalankan Perintah)</h3>
+                        <p>Sakit hati banget rasanya tiap buka sosmed. Muka gue diedit jadi hijau, kuping panjang, dikatain Goblin pengeruk tanah. Kalian pikir gue nebang pohon itu hobi? Ini tuh arahan Bos Besar! Target investasi harus masuk, hilirisasi harus jalan. Kalau hutan harus rata tanah demi angka pertumbuhan ekonomi, ya itu harga yang harus dibayar. Banjir atau bencana? Ya anggap aja itu cobaan alam, jangan salahin gue melulu. Gue ini cuma eksekutor yang kejepit. Kalau target nggak nyampe, gue diamuk atasan. Giliran gue kerja keras ratain lahan, malah dijadiin meme satu negara. Serba salah emang jadi abdi negara.</p>
+                        <div class="tags"><small>TumbalInvestasi</small><small>BukanSalahGue</small></div>
+                        <small class="author">Bahlil Lahadia</small>
                     </div>
                 </div>
+
+                
             </div> 
         </div> 
     </div>
@@ -245,9 +267,9 @@
                     <div class="awardee-list">
                         <div class="awardee-card">
                             <div class="profile-card">
-                                <div class="avatar-circle"><img src="" alt=""></div>
+                                <div class="avatar-circle"><img src="../img/1.png" alt=""></div>
                                 <div class="profile-info">
-                                    <strong>Username</strong>
+                                    <strong>johnd</strong>
                                     <p>Jane Doe</p>
                                     <small>Verified Contributor</small>
                                 </div>
@@ -258,10 +280,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="awardee-follow-section">                      
+                    
+                </div>
+                <div class="awardee-follow-section">                      
                         <div class="awardee-follow-card">
                             <div class="profile-left">
-                                <div class="avatar-circle-left"><img src="" alt=""></div>
+                                <div class="avatar-circle-left"><img src="../img/1.png" alt=""></div>
                                 <div class="profile-name">
                                     <strong>Jane Doe</strong>
                                     <small>Honorable Mention</small>
@@ -270,11 +294,15 @@
                                 </div>
                             </div>
                             <div class="follow-awardee">
-                                <a href="Honorable_mention.html" class="btn btn-primary mt-2">Ikuti</a>
+                                <button 
+                                    type="button"
+                                    class="btn btn-primary mt-2 btn-follow"
+                                    data-user="jane_doe">
+                                    Ikuti
+                                </button>
                             </div>
                         </div>      
                     </div>
-                </div>
             </div>
     </section>
     
@@ -283,34 +311,37 @@
         <div class="rating-title">
             <h1>Rating Kami</h1>
             <div class="account-rating">
-                <img src="placeholder_avatar.png" alt="Avatar John Doe" width="50" height="50">
+                <img src="../img/1.png" alt="Avatar John Doe" width="50" height="50">
                 <div class="account-rating-profile">
                     <strong>John Doe</strong><br>
                     <small>Your feedback matters</small>
                 </div>
             </div>
-            <h2>Umpan Balik Anda</h2>
-            <div class="kolom-rating">
-            <table>
-                <tr>
-                    <th>Nilai Rata-Rata</th>
-                    <th>Jumlah Ulasan</th>
-                    <th>Umpan Balik Positif</th>
-                </tr>
-                <tr>
-                    <td>4.5</td>
-                    <td>34</td>
-                    <td>85%</td>
-                </tr>
-            </table>
+            <h2>Umpan Balik</h2>
+            <div class="rating-stats-container">
+                <div class="stat-card">
+                    <span class="stat-label">Nilai Rata-Rata</span>
+                    <strong class="stat-value">4.5</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Jumlah Ulasan</span>
+                    <strong class="stat-value">34</strong>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Umpan Balik Positif</span>
+                    <strong class="stat-value">85%</strong>
+                </div>
+            </div>
+
             <form>
                 <h3>Berikan Ulasan</h3>
-                <textarea placeholder="Tuliskan pikiran Anda di sini..." rows="4" cols="50"></textarea>
+                <textarea placeholder="Tuliskan pikiran Anda di sini..." rows="4"></textarea>
                 <p>Masukkan Anda membantu kami untuk terus memperbaiki diri!</p>
-                <button type="button" class="btn btn-secondary">Hapus</button>
-                <button type="submit" onclick="window.location.href='rating_kami.html'; return false;" class="btn btn-primary">Berikan Rating</button>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <button type="button" class="btn btn-secondary">Hapus</button>
+                    <button type="submit" class="btn btn-primary">Berikan Rating</button>
+                </div>
             </form>
-            </div>
         </div>
     </div>
     </section>
@@ -327,7 +358,7 @@
                 
                 <div class="testimonial-card">
                     <div class="user-info">
-                        <div class="avatar"></div> <div class="user-details">
+                        <div class="avatar1"></div> <div class="user-details">
                             <h4>Alice B.</h4>
                             <span class="stars">★★★★★</span>
                         </div>
@@ -337,7 +368,7 @@
 
                 <div class="testimonial-card">
                     <div class="user-info">
-                        <div class="avatar"></div>
+                        <div class="avatar2"></div>
                         <div class="user-details">
                             <h4>John D.</h4>
                             <span class="stars">★★★★★</span>
@@ -348,7 +379,7 @@
                 
                 <div class="testimonial-card">
                     <div class="user-info">
-                        <div class="avatar"></div>
+                        <div class="avatar3"></div>
                         <div class="user-details">
                             <h4>Sarah M.</h4>
                             <span class="stars">★★★★★</span>
@@ -359,7 +390,7 @@
 
                 <div class="testimonial-card">
                     <div class="user-info">
-                        <div class="avatar"></div>
+                        <div class="avatar1"></div>
                         <div class="user-details">
                             <h4>Alice B.</h4>
                             <span class="stars">★★★★★</span>
@@ -370,7 +401,7 @@
 
                 <div class="testimonial-card">
                     <div class="user-info">
-                        <div class="avatar"></div>
+                        <div class="avatar2"></div>
                         <div class="user-details">
                             <h4>John D.</h4>
                             <span class="stars">★★★★★</span>
@@ -381,7 +412,7 @@
 
                    <div class="testimonial-card">
                     <div class="user-info">
-                        <div class="avatar"></div>
+                        <div class="avatar3"></div>
                         <div class="user-details">
                             <h4>Sarah M.</h4>
                             <span class="stars">★★★★★</span>
@@ -402,10 +433,10 @@
         </div>
 
         <div class="footer-nav">
-            <a href="#"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
-            <a href="#"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
-            <a href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a>
-            <a href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a href="tulis_pesanmu.html"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
+            <a href="halaman_utama_login.html"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            <a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
             <a href="#"><i class="fas fa-paper-plane"></i> Undang Teman</a>
         </div>
 
@@ -429,5 +460,7 @@
     </footer>
     <script src="../JS/script_menu.js"></script>
     <script src="../JS/menu_burger.js"></script>
+    <script src="../JS/navigasi.js"></script>
+
 </body>
 </html>

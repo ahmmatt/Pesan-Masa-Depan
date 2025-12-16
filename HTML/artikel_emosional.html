@@ -34,24 +34,24 @@
                 
                 <div class="timeline_section">
                     <h3>
-                          <a href="#" id="tabUntukmu" class="active">Untukmu</a>
-                          <a href="#" id="tabMengikuti">Mengikuti</a>
+                        <a href="javascript:void(0)" id="tabUntukmu" class="active" onclick="filterTab('untukmu')">Untukmu</a>
+                        <a href="javascript:void(0)" id="tabMengikuti" onclick="filterTab('mengikuti')">Mengikuti</a>
                     </h3>
                 </div>
                 
                 
                 <div class="tulis_konten_card">
                     
-                    <form action="proses_upload.php" method="POST" enctype="multipart/form-data">
+                    <form action="" method="" enctype="">
                         <div class="tulis_profile">
-                            <img src="placeholder_avatar.png" alt="Avatar Pengguna Saat Ini" width="40" height="40">
+                            <img src="../img/saya.jpg" alt="Avatar Pengguna Saat Ini" width="40" height="40">
                             <h3>username</h3>
                         </div>
                         <div>
                             <label for="post_content">Apa yang terjadi?</label>
                             <textarea id="post_content" name="post_content" rows="3" cols="50" placeholder="Tuliskan pikiran Anda di sini..."></textarea>
                             
-                            <div class="file-upload">
+                        <div class="file-upload">
                             <button type="button" id="btnUpload" class="upload-icon">
                              <i class="fas fa-plus"></i>
                             </button>
@@ -61,185 +61,196 @@
                         </div>
                         <hr>
                         <button type="submit" class="btn btn-primary">Kirim</button> 
-                </form>
-                    </form>
-                </div>
-                
-                <div class="konten_section untukmu">
-                    <div id="kontenMengikuti" style="display:none;"></div>
-                    <div class="konten_card" 
-                         data-user="username"
-                         data-article-id="art_001" 
-                         data-title="The Future of Technology (Card 1)" 
-                         data-author="Name"
-                         data-summary="Exploring what lies ahead in tech."
-                         data-tags="[AI] [Innovation]">
-                        <div class="header_konten_section">
-                            <img src="placeholder_avatar.png" alt="Avatar Name" width="40" height="40">
-                            <div class="konten_account">
-                                <strong>Name</strong> 
-                                <small>@username</small>
-                            </div>
-                            <button class="btn btn-primary btn-ikuti">Ikuti</button>
-                        </div>
-                        <div class="main_konten_section">
-                            <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
-                            
-                            <h3>The Future of Technology</h3>
-                            <p>Exploring what lies ahead in tech.</p>
-                            
-                            <small>[AI] [Innovation]</small><br>
-                            <small>John Doe</small>
-                        </div>
                         
-                        <hr>
-                        <div class="footer_konten_section"> 
-                                <a href="#" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
-                                <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
-                                <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a>
-                                <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
-                                    <i class="fas fa-save"></i> Simpan
-                                </a>
-                            <div class="bawah_like">
-                                <small>2,430 suka</small>
-                                <small>Tanggal Hari Ini</small>
-                            </div>
-
-                        </div>
-                        <div class="komentar-wrapper" style="display:none;">
-                            <div class="daftar-komentar"></div>
-
-                            <div class="form-komentar">
-                             <input 
-                                type="text" 
-                                class="input-komentar" 
-                                placeholder="Tulis komentar..." />
-                             <button class="btn btn-primary btn-kirim-komentar">
-                                Kirim
-                             </button>
-                            </div>
-                        </div>
-                    </div>
+                    </form>    
                 </div>
-
-                <div class="konten_section untukmu">
-                    <div id="kontenMengikuti" style="display:none;"></div>
-                    <div class="konten_card" 
-                         data-user="username"
-                         data-article-id="art_001" 
-                         data-title="The Future of Technology (Card 1)" 
-                         data-author="Name"
-                         data-summary="Exploring what lies ahead in tech."
-                         data-tags="[AI] [Innovation]">
-                        <div class="header_konten_section">
-                            <img src="placeholder_avatar.png" alt="Avatar Name" width="40" height="40">
-                            <div class="konten_account">
-                                <strong>Name</strong> 
-                                <small>@username</small>
-                            </div>
-                            <button class="btn btn-primary btn-ikuti">Ikuti</button>
-                        </div>
-                        <div class="main_konten_section">
-                            <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
-                            
-                            <h3>The Future of Technology</h3>
-                            <p>Exploring what lies ahead in tech.</p>
-                            
-                            <small>[AI] [Innovation]</small><br>
-                            <small>John Doe</small>
-                        </div>
-                        
-                        <hr>
-                        <div class="footer_konten_section"> 
-                                <a href="#" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
-                                <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
-                                <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a>
-                                <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
-                                    <i class="fas fa-save"></i> Simpan
-                                </a>
-                            <div class="bawah_like">
-                                <small>2,430 suka</small>
-                                <small>Tanggal Hari Ini</small>
-                            </div>
-
-                        </div>
-                        <div class="komentar-wrapper" style="display:none;">
-                            <div class="daftar-komentar"></div>
-
-                            <div class="form-komentar">
-                             <input 
-                                type="text" 
-                                class="input-komentar" 
-                                placeholder="Tulis komentar..." />
-                             <button class="btn btn-primary btn-kirim-komentar">
-                                Kirim
-                             </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="konten_section untukmu">
-                    <div id="kontenMengikuti" style="display:none;"></div>
-                    <div class="konten_card" 
-                         data-user="username"
-                         data-article-id="art_001" 
-                         data-title="The Future of Technology (Card 1)" 
-                         data-author="Name"
-                         data-summary="Exploring what lies ahead in tech."
-                         data-tags="[AI] [Innovation]">
-                        <div class="header_konten_section">
-                            <img src="placeholder_avatar.png" alt="Avatar Name" width="40" height="40">
-                            <div class="konten_account">
-                                <strong>Name</strong> 
-                                <small>@username</small>
-                            </div>
-                            <button class="btn btn-primary btn-ikuti">Ikuti</button>
-                        </div>
-                        <div class="main_konten_section">
-                            <img src="placeholder_gambar_artikel.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
-                            
-                            <h3>The Future of Technology</h3>
-                            <p>Exploring what lies ahead in tech.</p>
-                            
-                            <small>[AI] [Innovation]</small><br>
-                            <small>John Doe</small>
-                        </div>
-                        
-                        <hr>
-                        <div class="footer_konten_section"> 
-                                <a href="#" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
-                                <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
-                                <a href="#"><i class="fas fa-share"></i> Bagikan surat ini</a>
-                                <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
-                                    <i class="fas fa-save"></i> Simpan
-                                </a>
-                            <div class="bawah_like">
-                                <small>2,430 suka</small>
-                                <small>Tanggal Hari Ini</small>
-                            </div>
-
-                        </div>
-                        <div class="komentar-wrapper" style="display:none;">
-                            <div class="daftar-komentar"></div>
-
-                            <div class="form-komentar">
-                             <input 
-                                type="text" 
-                                class="input-komentar" 
-                                placeholder="Tulis komentar..." />
-                             <button class="btn btn-primary btn-kirim-komentar">
-                                Kirim
-                             </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                
             </div>
+            
+                    <div class="konten_section untukmu">
+
+                        <div class="konten_card" 
+                            data-user="username"
+                            data-ava="../img/1.png"
+                            data-article-id="art_001" 
+                            data-title="Sepi di Tengah Sempurna" 
+                            data-author="John Doe"
+                            data-tgl="17 Desember 2025"
+                            data-summary="Ngeri nggak sih? Kalau nanti AI bisa lakuin semua hal—nulis, gambar, bahkan 'sayang' 
+                                    sama kita—terus manusia gunanya apa? Aku takut kita bakal hidup di dunia yang serba sempurna tapi palsu. 
+                                    Kita makin akrab sama mesin yang selalu 'ngerti', tapi makin asing sama manusia lain. Rasanya kayak pelan-pelan kita 
+                                    cuma jadi penonton di kehidupan sendiri, digantikan oleh algoritma.."
+                            data-img="../img/the_future.png"
+                            data-tags="[DistopiaDigital] [HilangnyaKemanusiaan]">
+                            <div class="header_konten_section">
+                                <img src="../img/1.png" alt="Avatar Name" width="40" height="40">
+                                <div class="konten_account">
+                                    <strong>johnd</strong> 
+                                    <small>John Doe</small>
+                                </div>
+                                <button class="btn btn-primary btn-ikuti" onclick="toggleFollow(this)">Ikuti</button>
+                            </div>
+                            <div class="main_konten_section">
+                                <img src="../img/the_future.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
+                                
+                                <h3>Sepi di Tengah Sempurna</h3>
+                                <p>Ngeri nggak sih? Kalau nanti AI bisa lakuin semua hal—nulis, gambar, bahkan 'sayang' 
+                                    sama kita—terus manusia gunanya apa? Aku takut kita bakal hidup di dunia yang serba sempurna tapi palsu. 
+                                    Kita makin akrab sama mesin yang selalu 'ngerti', tapi makin asing sama manusia lain. Rasanya kayak pelan-pelan kita 
+                                    cuma jadi penonton di kehidupan sendiri, digantikan oleh algoritma.</p>
+                                
+                                <small>[DistopiaDigital] [HilangnyaKemanusiaan]</small><br>
+                                <small>John Doe</small>
+                            </div>
+                            
+                            <hr>
+                            <div class="footer_konten_section"> 
+                                    <a href="javascript:void(0)" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
+                                    <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
+                                    <a href=""><i class="fas fa-share"></i> Bagikan</a>
+                                    <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
+                                        <i class="fas fa-save"></i> Simpan
+                                    </a>
+                                <div class="bawah_like">
+                                    <small>0 suka</small>
+                                    <small>17 Desember 2025</small>
+                                </div>
+
+                            </div>
+                            <div class="komentar-wrapper" style="display:none;">
+                                <div class="form-komentar">
+                                <input 
+                                    type="text" 
+                                    class="input-komentar" 
+                                    placeholder="Tulis komentar..." />
+                                <button class="btn btn-primary btn-kirim-komentar">
+                                    Kirim
+                                </button>
+                                </div>
+                                <div class="daftar-komentar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="konten_section untukmu">
+
+                        <div class="konten_card" 
+                            data-user="sarahart"
+                            data-article-id="art_002" 
+                            data-ava="../img/5.png"
+                            data-title="Tragedi File Final_Banget_V12" 
+                            data-author="Sarah M."
+                            data-tgl="16 Desember 2025"
+                            data-summary="Sumpah, kepalaku rasanya mau meledak. Awalnya bilang 'terserah desainer', giliran dikasih hasil bagus, revisinya malah ngerusak konsep. Paling bikin emosi itu pas dibilang, 'Kurang nendang, coba logonya digedein tapi jangan makan tempat.' Maksudnya gimana coba? Fileku udah ganti nama dari Final.jpg sampai Final_Bismillah_Acc_V12.jpg. Rasanya percuma punya skill kalau ujung-ujungnya cuma jadi robot yang disuruh geser gambar ke kiri-kanan seharian."
+                            data-img="../img/art_de.pn.png"
+                            data-tags="[DesignerLife] [BudakRevisi]">
+                            <div class="header_konten_section">
+                                <img src="../img/5.png" alt="Avatar Name" width="40" height="40">
+                                <div class="konten_account">
+                                    <strong>Sarah M.</strong> 
+                                    <small>sarahart</small>
+                                </div>
+                                <button class="btn btn-primary btn-ikuti" onclick="toggleFollow(this)">Ikuti</button>
+                            </div>
+                            <div class="main_konten_section">
+                                <img src="../img/art_de.pn.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
+                                
+                                <h3>Tragedi File Final_Banget_V12</h3>
+                                <p>Sumpah, kepalaku rasanya mau meledak. Awalnya bilang 'terserah desainer', giliran dikasih hasil bagus, revisinya malah ngerusak konsep. Paling bikin emosi itu pas dibilang, 'Kurang nendang, coba logonya digedein tapi jangan makan tempat.' Maksudnya gimana coba? Fileku udah ganti nama dari Final.jpg sampai Final_Bismillah_Acc_V12.jpg. Rasanya percuma punya skill kalau ujung-ujungnya cuma jadi robot yang disuruh geser gambar ke kiri-kanan seharian.</p>
+                                
+                                <small>[DesignerLife] [BudakRevisi]</small><br>
+                                <small>Sarah M.</small>
+                            </div>
+                            
+                            <hr>
+                            <div class="footer_konten_section"> 
+                                    <a href="javascript:void(0)" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
+                                    <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
+                                    <a href=""><i class="fas fa-share"></i> Bagikan</a>
+                                    <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
+                                        <i class="fas fa-save"></i> Simpan
+                                    </a>
+                                <div class="bawah_like">
+                                    <small>0 suka</small>
+                                    <small>16 Desember 2025</small>
+                                </div>
+
+                            </div>
+                            <div class="komentar-wrapper" style="display:none;">
+                                <div class="form-komentar">
+                                <input 
+                                    type="text" 
+                                    class="input-komentar" 
+                                    placeholder="Tulis komentar..." />
+                                <button class="btn btn-primary btn-kirim-komentar">
+                                    Kirim
+                                </button>
+                                </div>
+                            <div class="daftar-komentar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="konten_section untukmu">
+
+                        <div class="konten_card" 
+                            data-user="goblinindo"
+                            data-ava="../img/7.png"
+                            data-article-id="art_003" 
+                            data-title="Dilema Sang 'Goblin' (Padahal Cuma Jalankan Perintah)" 
+                            data-author="Bahlil Lahadia"
+                            data-tgl="12 Desember 2025"
+                            data-summary="Sakit hati banget rasanya tiap buka sosmed. Muka gue diedit jadi hijau, kuping panjang, dikatain Goblin pengeruk tanah. Kalian pikir gue nebang pohon itu hobi? Ini tuh arahan Bos Besar! Target investasi harus masuk, hilirisasi harus jalan. Kalau hutan harus rata tanah demi angka pertumbuhan ekonomi, ya itu harga yang harus dibayar. Banjir atau bencana? Ya anggap aja itu cobaan alam, jangan salahin gue melulu. Gue ini cuma eksekutor yang kejepit. Kalau target nggak nyampe, gue diamuk atasan. Giliran gue kerja keras ratain lahan, malah dijadiin meme satu negara. Serba salah emang jadi abdi negara."
+                            data-img="../img/hutan.png"
+                            data-tags="[TumbalInvestasi] [BukanSalahGue]">
+                            <div class="header_konten_section">
+                                <img src="../img/7.png" alt="Avatar Name" width="40" height="40">
+                                <div class="konten_account">
+                                    <strong>Bahlil Lahadia</strong> 
+                                    <small>goblinindo</small>
+                                </div>
+                                <button class="btn btn-primary btn-ikuti" onclick="toggleFollow(this)">Ikuti</button>
+                            </div>
+                            <div class="main_konten_section">
+                                <img src="../img/hutan.png" alt="Gambar Ilustrasi Teknologi" width="100" height="70">
+                                
+                                <h3>Dilema Sang "Goblin" (Padahal Cuma Jalankan Perintah)</h3>
+                                <p>Sakit hati banget rasanya tiap buka sosmed. Muka gue diedit jadi hijau, kuping panjang, dikatain Goblin pengeruk tanah. Kalian pikir gue nebang pohon itu hobi? Ini tuh arahan Bos Besar! Target investasi harus masuk, hilirisasi harus jalan. Kalau hutan harus rata tanah demi angka pertumbuhan ekonomi, ya itu harga yang harus dibayar. Banjir atau bencana? Ya anggap aja itu cobaan alam, jangan salahin gue melulu. Gue ini cuma eksekutor yang kejepit. Kalau target nggak nyampe, gue diamuk atasan. Giliran gue kerja keras ratain lahan, malah dijadiin meme satu negara. Serba salah emang jadi abdi negara.</p>
+                                
+                                <small>[TumbalInvestasi] [BukanSalahGue]</small><br>
+                                <small>Bahlil Lahadia</small>
+                            </div>
+                            
+                            <hr>
+                            <div class="footer_konten_section"> 
+                                    <a href="javascript:void(0)" class="btn-like" onclick="sukaiArtikel(this)"><i class="fas fa-heart"></i> Suka</a>
+                                    <a href="#" class="btn-komentar"><i class="fas fa-comment"></i> Komentar</a> 
+                                    <a href=""><i class="fas fa-share"></i> Bagikan</a>
+                                    <a href="#" class="btn-simpan" onclick="simpanArtikel(this)">
+                                        <i class="fas fa-save"></i> Simpan
+                                    </a>
+                                <div class="bawah_like">
+                                    <small>22 suka</small>
+                                    <small>12 Desember 2025</small>
+                                </div>
+
+                            </div>
+                            <div class="komentar-wrapper" style="display:none;">
+                                <div class="form-komentar">
+                                <input 
+                                    type="text" 
+                                    class="input-komentar" 
+                                    placeholder="Tulis komentar..." />
+                                <button class="btn btn-primary btn-kirim-komentar">
+                                    Kirim
+                                </button>
+                                </div>
+                                <div class="daftar-komentar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
         </section>
 
         <section class="bagian-kanan">
@@ -247,10 +258,10 @@
                 <h2>Profil Saya</h2>
                 <div class="header_user_profile">
                     <div class="profile_info_wrapper">
-                        <img src="placeholder_avatar.png" alt="Avatar Pengguna" width="80" height="80">
+                        <img src="../img/saya.jpg" alt="Avatar Pengguna" width="80" height="80">
                         <div class="profile_name">
-                            <strong>Name</strong> 
-                            <small>@username</small>
+                            <strong>Dalle</strong> 
+                            <small>@dalle123</small>
                         </div>
                     </div>
                     <button class="btn btn-primary" id="btnEditProfile">edit</button>
@@ -275,50 +286,42 @@
             
             <div class="recomendation_card">
                 <div id="rekomendasi">
-                    <div class="timeline_section">
-                        <a href="#" class="active">Untukmu</a>
-                        <a href="#">Mengikuti</a>
-                    </div>
-
-                    <div id="kontenUntukmu"></div>
-                    <div id="kontenMengikuti" style="display:none;"></div>
-
                     <h2>Rekomendasi</h2>
 
-                    <div class="recommend_account" data-user="Pablo">
-                        <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 1" width="30" height="30">
+                    <div class="recomend_account">
+                        <img src="../img/deankt.jpg" alt="Avatar Rekomendasi 1" width="30" height="30">
                         <div class="account_name">
-                            <strong>Name</strong> 
-                            <small>@username</small>
+                            <strong>Aldean Tegar Gemilang</strong> 
+                            <small>deankt</small>
                         </div>
-                        <button class="btn btn-primary">Ikuti</button>
-                    </div>
-
-                    <div class="recommend_account" data-user="Basyir">
-                        <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 2" width="30" height="30">
-                        <div class="account_name">
-                            <strong>Name</strong> 
-                            <small>@username</small>
-                        </div>
-                        <button class="btn btn-primary">Ikuti</button>
+                        <button class="btn btn-primary" onclick="toggleFollow(this)">Ikuti</button>
                     </div>
                     
-                    <div class="recommend_account" data-user="Elvy">
-                        <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 3" width="30" height="30">
+                    <div class="recomend_account">
+                        <img src="../img/upik.webp" alt="Avatar Rekomendasi 2" width="30" height="30">
                         <div class="account_name">
-                            <strong>Name</strong> 
-                            <small>@username</small>
+                            <strong>Luthfi Halimawan</strong> 
+                            <small>upik</small>
                         </div>
-                        <button class="btn btn-primary">Ikuti</button>
+                        <button class="btn btn-primary" onclick="toggleFollow(this)">Ikuti</button>
                     </div>
                     
-                    <div class="recommend_account" data-user="firza">
-                        <img src="placeholder_avatar.png" alt="Avatar Rekomendasi 4" width="30" height="30">
+                    <div class="recomend_account">
+                        <img src="../img/adell.webp" alt="Avatar Rekomendasi 3" width="30" height="30">
                         <div class="account_name">
-                            <strong>Name</strong> 
-                            <small>@username</small>
+                            <strong>Nastasia Adeline</strong> 
+                            <small>adell</small>
                         </div>
-                        <button class="btn btn-primary">Ikuti</button>
+                        <button class="btn btn-primary" onclick="toggleFollow(this)">Ikuti</button>
+                    </div>
+                    
+                    <div class="recomend_account">
+                        <img src="../img/maysa.jpg" alt="Avatar Rekomendasi 4" width="30" height="30">
+                        <div class="account_name">
+                            <strong>Maysa KZ</strong> 
+                            <small>maysakz</small>
+                        </div>
+                        <button class="btn btn-primary" onclick="toggleFollow(this)">Ikuti</button>
                     </div>
                 </div>
             </div>
@@ -332,26 +335,26 @@
             </div>
 
             <div class="footer-nav">
-                <a href="#"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
-                <a href="#"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
-                <a href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a>
-                <a href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
-                <a href="#"><i class="fas fa-paper-plane"></i> Undang Teman</a>
+                <a href="tulis_pesanmu.html"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
+                <a href="halaman_utama_login.html"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
+                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+                <a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+                <a href=""><i class="fas fa-paper-plane"></i> Undang Teman</a>
             </div>
 
             <div class="footer-socials">
-                <a href="#"><i class="fab fa-x"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-x"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
             </div>
 
             <div class="footer-bottom">
                 <div class="footer-legal-links">
-                    <a href="#">Terms of use</a>
+                    <a href="">Terms of use</a>
                     <span>·</span>
-                    <a href="#">Privacy Policy</a>
+                    <a href="">Privacy Policy</a>
                 </div>
                 <p>Pesan Masa Depan™ brought to you by Kelompok 2 ©2025.</p>
             </div>
@@ -361,6 +364,5 @@
     <script src="../JS/menu_burger.js"></script>
     <script src="../JS/tersimpan.js"></script>
     <script src="../JS/script.artikel.js"></script>
-    <script src="../JS/mengikuti.js"></script>
 </body>
 </html>

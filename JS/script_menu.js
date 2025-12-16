@@ -1,12 +1,11 @@
-// emoji bagian menu
-// memastikan bagian js di jalankan di seluruh elemen html dan
-// mencegah error
 document.addEventListener("DOMContentLoaded", () => {
     const emojis = document.querySelectorAll("#pilih_emotikon img");
     const motivasi = document.getElementById("motivasiSection");
     const emojiBox = document.getElementById("emojiDisplay");
     const judul = document.getElementById("judulMotivasi");
     const isi = document.getElementById("isimotivasi");
+    const tag1 = document.getElementById("tag1");
+    const tag2 = document.getElementById("tag2");
 
     emojis.forEach(emoji => {
         emoji.addEventListener("click", () => {
@@ -33,134 +32,172 @@ document.addEventListener("DOMContentLoaded", () => {
             // ganti teks motivasi
             judul.textContent = emoji.dataset.judul;
             isi.textContent = emoji.dataset.isi;
+            tag1.textContent = emoji.dataset.tag1;
+            tag2.textContent = emoji.dataset.tag2;
+
         });
     });
 });
 
-// BAGIAN KOMENTAR, LOVE, SIMPAN, DAN SHARE
-const letters = document.querySelectorAll(".letter-data");
-let index = 0; //menyimpan posisi surat yang di tampilkan
+// ===============================
+// LIKE, KOMENTAR, SHARE (PER SURAT)
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
 
-// memanggil(lihat bagian dalam kurungnya)
-const judul = document.getElementById("judulSurat");
-const waktu = document.getElementById("waktuSurat");
-const isi = document.getElementById("isiSurat");
-const tanggal = document.getElementById("tanggalSurat");
+  /* ========= LIKE ========= */
+  const likeBtn = document.getElementById("btnLike");
+  const likeCount = document.getElementById("likeCount");
 
-// ini mengambil button (sesuai dalam kurung)
-const prev = document.getElementById("btnPrev");
-const next = document.getElementById("btnNext");
-const likeBtn = document.getElementById("btnLike");
+  const likeKey = i => `surat_${i}_liked`;
+  const likeCountKey = i => `surat_${i}_like_count`;
+
+  function loadLike(index, defaultCount = 0) {
+    const liked = localStorage.getItem(likeKey(index)) === "true";
+    const count =
+      Number(localStorage.getItem(likeCountKey(index))) || defaultCount;
+
+    likeBtn.classList.toggle("active", liked);
+    likeCount.textContent = count;
+  }
+
+  likeBtn.addEventListener("click", e => {
+    e.preventDefault();
+
+    let liked = localStorage.getItem(likeKey(currentIndex)) === "true";
+    let count = Number(likeCount.textContent);
+
+    liked = !liked;
+    count += liked ? 1 : -1;
+
+    localStorage.setItem(likeKey(currentIndex), liked);
+    localStorage.setItem(likeCountKey(currentIndex), count);
+
+    likeBtn.classList.toggle("active", liked);
+    likeCount.textContent = count;
+  });
+
+  /* ========= SHARE (1x + UNSHARE | PER SURAT) ========= */
 const shareBtn = document.getElementById("btnShare");
-const commentBtn = document.getElementById("btnComment");
-
-// menampilkan like&share 
-const likeCount = document.getElementById("likeCount");
 const shareCount = document.getElementById("shareCount");
 
-// mengatur area komentar
-const commentSection = document.getElementById("commentSection");
-const commentInput = document.getElementById("commentInput");
-const submitComment = document.getElementById("submitComment");
-const commentList = document.getElementById("commentList");
+const shareKey = i => `surat_${i}_shared`;
+const shareCountKey = i => `surat_${i}_share_count`;
 
-// mengubah format tanggalnya
-function formatTanggal(d) {
-  return new Date(d).toLocaleDateString("id-ID", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric"
+function loadShare(index, defaultCount = 0) {
+    const shared = localStorage.getItem(shareKey(index)) === "true";
+    const count =
+        Number(localStorage.getItem(shareCountKey(index))) || defaultCount;
+
+    shareBtn.classList.toggle("active", shared);
+    shareCount.textContent = count;
+}
+
+shareBtn.addEventListener("click", e => {
+    e.preventDefault();
+
+    let shared = localStorage.getItem(shareKey(currentIndex)) === "true";
+    let count = Number(shareCount.textContent);
+
+    shared = !shared;
+    count += shared ? 1 : -1;
+
+    localStorage.setItem(shareKey(currentIndex), shared);
+    localStorage.setItem(shareCountKey(currentIndex), count);
+
+    shareBtn.classList.toggle("active", shared);
+    shareCount.textContent = count;
+});
+
+
+  /* ========= KOMENTAR ========= */
+  const commentBtn = document.getElementById("btnComment");
+  const commentSection = document.getElementById("commentSection");
+  const commentInput = document.getElementById("commentInput");
+  const submitComment = document.getElementById("submitComment");
+  const commentList = document.getElementById("commentList");
+
+  const commentKey = i => `surat_${i}_comments`;
+
+  commentBtn.addEventListener("click", e => {
+    e.preventDefault();
+    commentSection.style.display =
+      commentSection.style.display === "none" ? "block" : "none";
   });
-}
 
-// menghitung jumlah kata dari isi surat
-const kata = t => t.trim().split(/\s+/).length;
+  function loadKomentar(index) {
+    const comments = JSON.parse(
+      localStorage.getItem(commentKey(index)) || "[]"
+    );
 
-// load (memuat surat berdasarkan index)
-function loadSurat() {
-  const el = letters[index]; //mengambil data surat dari data
-  const isiText = el.dataset.isi;
-  const id = "surat_" + index; //membuatki id unik untuk localstorage
+    commentList.innerHTML = "";
+    comments.forEach(text => {
+      const li = document.createElement("li");
+      li.textContent = text;
+      commentList.appendChild(li);
+    });
+  }
 
-  judul.textContent = el.dataset.judul; //tiga ini untuk menampilkan isi surat
-  waktu.textContent = el.dataset.waktu;
-  isi.textContent = isiText;
+  submitComment.addEventListener("click", () => {
+    const text = commentInput.value.trim();
+    if (!text) return;
 
-  tanggal.textContent = //tampilkan tanggal&jumlah kata
-    `${formatTanggal(el.dataset.mulai)} → ${formatTanggal(el.dataset.akhir)} • ${kata(isiText)} kata`;
+    const comments = JSON.parse(
+      localStorage.getItem(commentKey(currentIndex)) || "[]"
+    );
 
-  //dibawah itu, data tetap ada walauu di refrresh
-  likeCount.textContent = localStorage.getItem(id + "_like") || 0;
-  shareCount.textContent = localStorage.getItem(id + "_share") || 0;
+    comments.push(text);
+    localStorage.setItem(
+      commentKey(currentIndex),
+      JSON.stringify(comments)
+    );
 
-  renderKomentar(); //load komentarnya
-}
-
-// navigasi surat
-//tombol sebelumnya
-prev.onclick = e => {
-  e.preventDefault();
-  if (index > 0) index--;
-  loadSurat();
-};
-
-//tombol berikutnya
-next.onclick = e => {
-  e.preventDefault();
-  if (index < letters.length - 1) index++;
-  loadSurat();
-};
-
-// like suratnya
-likeBtn.onclick = e => {
-  e.preventDefault();
-  const key = "surat_" + index + "_like"; //menambah jumlah like
-  let count = Number(localStorage.getItem(key)) || 0; //disimpan di localstorage
-  localStorage.setItem(key, ++count); 
-  likeCount.textContent = count;
-};
-
-// share surat
-shareBtn.onclick = e => {
-  e.preventDefault();
-  const key = "surat_" + index + "_share";
-  let count = Number(localStorage.getItem(key)) || 0;
-  localStorage.setItem(key, ++count);
-  shareCount.textContent = count;
-};
-
-// komen toggle (kliktampil dan sembunyikan kome)
-commentBtn.onclick = e => {
-  e.preventDefault();
-  commentSection.style.display =
-    commentSection.style.display === "none" ? "block" : "none";
-};
-
-// kirim komentar
-submitComment.onclick = () => {
-  if (!commentInput.value.trim()) return; //mencegah komen kosong
-
-  const key = "surat_" + index + "_comment";
-  const comments = JSON.parse(localStorage.getItem(key)) || [];
-  comments.push(commentInput.value);
-  localStorage.setItem(key, JSON.stringify(comments));
-  commentInput.value = ""; //simpNan komen surat
-
-  //mengambil komen dari localstorage (menampilkan sebagai list li)
-  renderKomentar();
-};
-
-// renderKomentar
-function renderKomentar() {
-  const key = "surat_" + index + "_comment";
-  const comments = JSON.parse(localStorage.getItem(key)) || [];
-  commentList.innerHTML = "";
-  comments.forEach(c => {
-    const li = document.createElement("li");
-    li.textContent = c;
-    commentList.appendChild(li);
+    commentInput.value = "";
+    loadKomentar(currentIndex);
   });
-}
 
-// menampilkan surat pertama saat halaman dibuka
-loadSurat();
+  /* ========= DIPANGGIL SAAT GANTI SURAT ========= */
+  window.loadInteraksiSurat = function (index, data) {
+    currentIndex = index;
+    loadLike(index, data.like);
+    loadShare(index, data.share);
+    loadKomentar(index);
+  };
+
+});
+
+//Ikuti 
+document.addEventListener("DOMContentLoaded", () => {
+
+  const followButtons = document.querySelectorAll(".btn-follow");
+
+  followButtons.forEach(btn => {
+    const userId = btn.dataset.user;
+    const key = "follow_" + userId;
+
+    let isFollowing = localStorage.getItem(key) === "true";
+
+    function render() {
+      if (isFollowing) {
+        btn.textContent = "Mengikuti";
+        btn.classList.add("following");
+      } else {
+        btn.textContent = "Ikuti";
+        btn.classList.remove("following");
+      }
+    }
+
+    btn.addEventListener("mouseleave", () => {
+      render();
+    });
+
+    // klik: toggle follow / unfollow
+    btn.addEventListener("click", () => {
+      isFollowing = !isFollowing;
+      localStorage.setItem(key, isFollowing);
+      render();
+    });
+
+    render();
+  });
+
+});

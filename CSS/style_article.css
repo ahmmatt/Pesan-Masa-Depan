@@ -145,19 +145,20 @@ hr {
 }
 
 .timeline_section a.active {
-  border-bottom: 3px solid #4a90e2;
-  color: #4a90e2;
-  font-weight: bold;
+    color: var(--primary-blue);
+    border-bottom: 3px solid var(--primary-blue);
+    font-weight: bold;
 }
 
 /* TOMBOL MENGIKUTI */
-.btn.mengikuti {
-  background-color: #b0b0b0;
+.btn-mengikuti {
+    background-color: #AAB8C2 !important; /* Warna abu-abu */
+    color: white !important;
+    border: none;
+    transition: 0.3s;
 }
-
-.btn.mengikuti:hover {
-  background-color: #ffdddd;
-  color: #c00;
+.btn-mengikuti:hover {
+    background-color: #8c9aa3 !important; /* Sedikit lebih gelap saat hover */
 }
 
 .btn.mengikuti:hover::after {
@@ -191,30 +192,52 @@ hr {
 
 
 /* edit */
-/* =================================================
-   EDIT PROFIL – CSS KHUSUS (ANTI KETIMPA)
-   ================================================= */
+.user_profile.edit-mode .header_user_profile button {
+    background-color: #28a745; /* Hijau simpan */
+    color: white;
+    /* Perkecil ukuran tombol */
+    padding: 6px 20px; 
+    font-size: 0.85rem;
+    width: auto; 
+    height: fit-content;
+    border-radius: 6px;
+    align-self: center; 
+    
+    /* --- TAMBAHAN JARAK --- */
+    margin-left: 20px; /* Memberi jarak antara input dan tombol */
+}
 
-/* Input nama & username */
+.user_profile.edit-mode .header_user_profile button:hover {
+    background-color: #218838;
+}
+.user_profile.edit-mode .profile_name {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Memberikan jarak yang rapi antara input Nama dan Username */
+    width: 100%;
+}
+
+/* Style umum untuk kedua input (Nama & Username) */
 .user_profile.edit-mode .profile_name input {
     width: 100%;
-    max-width: 180px;
+    max-width: 200px; /* Batasi lebar agar tidak terlalu panjang */
     padding: 6px 10px;
-
     font-family: var(--font-main);
     font-size: 0.95rem;
-
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: #fff;
     color: var(--text-dark);
-
     outline: none;
+    display: block; /* Pastikan input bersifat blok agar turun ke bawah */
+    box-sizing: border-box;
 }
 
-/* Spasi username */
+/* KHUSUS INPUT USERNAME - Hapus margin aneh sebelumnya */
 .user_profile.edit-mode .profile_name small input {
-    margin-left: 4px;
+    margin-left: 0; /* PENTING: Ini yang bikin tidak sejajar sebelumnya (dihapus) */
+    margin-top: 0;
+    font-size: 0.85rem; /* Username sedikit lebih kecil */
 }
 
 /* Focus state */
@@ -223,38 +246,25 @@ hr {
     box-shadow: 0 0 0 2px rgba(98, 144, 195, 0.25);
 }
 
-/* Textarea deskripsi */
+/* Textarea deskripsi (Tetap sama) */
 .user_profile.edit-mode textarea {
     width: 100%;
-    min-height: 70px;
-    margin-top: 8px;
-    padding: 8px 10px;
-
+    min-height: 80px;
+    margin-top: 15px; /* Jarak dari input username ke deskripsi */
+    padding: 10px;
     resize: vertical;
     font-family: var(--font-main);
     font-size: 0.9rem;
-
     border-radius: 8px;
     border: 1px solid #ccc;
     background-color: #fff;
     color: var(--text-dark);
 }
 
-/* Focus textarea */
 .user_profile.edit-mode textarea:focus {
     border-color: var(--primary-blue);
     box-shadow: 0 0 0 2px rgba(98, 144, 195, 0.25);
     outline: none;
-}
-
-/* Tombol edit → simpan (override aman) */
-.user_profile.edit-mode .header_user_profile button {
-    background-color: #28a745; /* hijau simpan */
-}
-
-/* Hover simpan */
-.user_profile.edit-mode .header_user_profile button:hover {
-    background-color: #218838;
 }
 
 
@@ -305,10 +315,7 @@ hr {
     background: rgba(255,255,255,0.1);
 }
 
-/* =========================================
-   1. FIKSASI NAVBAR
-   Agar navbar tetap di atas saat scroll
-   ========================================= */
+/*Agar navbar tetap di atas saat scroll*/
 body {
     padding-top: 90px; /* Memberi ruang agar konten tidak tertutup navbar */
 }
@@ -323,9 +330,7 @@ body {
     z-index: 1000;
 }
 
-/* =========================================
-   2. PAGE LAYOUT (GRID KIRI - KANAN)
-   ========================================= */
+/* PAGE LAYOUT (GRID KIRI - KANAN)*/
 .page-layout {
     display: grid;
     /* Pembagian kolom: Kiri (Feed) lebih lebar, Kanan (Sidebar) lebih kecil */
@@ -335,9 +340,7 @@ body {
     position: relative;
 }
 
-/* =========================================
-   3. BAGIAN KIRI (FEED SCROLLABLE)
-   ========================================= */
+/* BAGIAN KIRI (FEED SCROLLABLE) */
 .bagian_kiri {
     min-height: 100vh; /* Memastikan area ini panjang untuk scrolling */
 }
@@ -451,9 +454,7 @@ body {
     padding-top: 10px;
 }
 
-/* =========================================
-   4. BAGIAN KANAN (SIDEBAR STICKY / DIAM)
-   ========================================= */
+/* BAGIAN KANAN (SIDEBAR STICKY / DIAM) */
 .bagian-kanan {
     /* KUNCI AGAR TIDAK BERGERAK SAAT SCROLL */
     position: sticky;
@@ -699,12 +700,8 @@ body {
     .section-title { font-size: 1.8rem; }
 }
 
-/* =================================================================
-   SOLUSI FINAL CSS BURGER MENU (Override Total Posisi)
-   Ini menggunakan positioning untuk menjamin posisi di KANAN ATAS.
-   ================================================================= */
 
-/* --- 1. Memastikan Tata Letak Horizontal di Desktop (Sesuai Kebutuhan) --- */
+/* --- Memastikan Tata Letak Horizontal di Desktop (Sesuai Kebutuhan) --- */
 .navbar-content {
     /* Tetap butuh flex untuk desktop */
     display: flex !important; 
@@ -714,7 +711,7 @@ body {
     position: relative; /* Penting untuk positioning anak elemen */
 }
 
-/* --- 2. Gaya Dasar Hamburger (Ikon 3 Garis Animasi) --- */
+/* --- Gaya Dasar Hamburger (Ikon 3 Garis Animasi) --- */
 .hamburger {
     display: none; /* Sembunyikan di desktop */
     position: relative;
@@ -759,10 +756,10 @@ body {
 }
 
 
-/* --- 3. MOBILE STYLING (Responsive @media) --- */
+/* --- MOBILE STYLING (Responsive @media) --- */
 @media (max-width: 768px) {
     
-    /* 3A. POSISI BURGER MENU DI KANAN ATAS NAVIGASI */
+    /* POSISI BURGER MENU DI KANAN ATAS NAVIGASI */
     .hamburger {
         display: block !important; 
         position: absolute; /* Posisikan absolut dari .navbar-content */
@@ -776,7 +773,7 @@ body {
         position: static;
     }
     
-    /* 3B. NAV LINKS (Sidebar Slide-in) */
+    /* NAV LINKS (Sidebar Slide-in) */
     .nav-links {
         display: block; 
         position: fixed;
@@ -797,6 +794,20 @@ body {
         
         overflow-y: auto; 
         z-index: 1000;
+    }
+
+    /* KHUSUS TOMBOL LOGIN & SIGN UP */
+    .nav-links .btn-login,
+    .nav-links .btn-signup {
+        text-align: center;      /* Membuat tulisan ke tengah */
+        margin-top: 10px;        /* Memberi jarak sedikit agar tidak dempet */
+        border: 1px solid rgba(255, 255, 255, 0.5); /* Memperjelas garis kotak */
+    }
+
+    /* Opsional: Menghilangkan garis bawah pemisah khusus untuk area tombol */
+    .nav-links li:has(.btn-login),
+    .nav-links li:has(.btn-signup) {
+        border-bottom: none;
     }
     
     /* Menu Terbuka (Slide in) */
@@ -836,11 +847,8 @@ body {
         overflow: hidden !important;
     }
 }
-    /* --- DI SEMUA FILE CSS NAVBAR ANDA --- */
-
     .hamburger span {
     /* ... (properti lain) ... */
     
-    /* GANTI PROPERTI INI UNTUK MENGUBAH WARNA GARIS */
     background: #0077ff; /* Contoh: Warna Biru Neon */
 }

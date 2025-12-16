@@ -43,34 +43,37 @@
             <div class="rating-title">
                 <h1>Rating Kami</h1>
                 <div class="account-rating">
-                    <img src="placeholder_avatar.png" alt="Avatar John Doe" width="50" height="50">
+                    <img src="../img/1.png" alt="Avatar John Doe" width="50" height="50">
                     <div class="account-rating-profile">
                         <strong>John Doe</strong><br>
                         <small>Your feedback matters</small>
                     </div>
                 </div>
-                <h2>Umpan Balik Anda</h2>
-                <div class="kolom-rating">
-                <table>
-                    <tr>
-                        <th>Nilai Rata-Rata</th>
-                        <th>Jumlah Ulasan</th>
-                        <th>Umpan Balik Positif</th>
-                    </tr>
-                    <tr>
-                        <td>4.5</td>
-                        <td>34</td>
-                        <td>85%</td>
-                    </tr>
-                </table>
+                <h2>Umpan Balik</h2>
+                <div class="rating-stats-container">
+                    <div class="stat-card">
+                        <span class="stat-label">Nilai Rata-Rata</span>
+                        <strong class="stat-value">4.5</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Jumlah Ulasan</span>
+                        <strong class="stat-value">34</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Umpan Balik Positif</span>
+                        <strong class="stat-value">85%</strong>
+                    </div>
+                </div>
+
                 <form>
                     <h3>Berikan Ulasan</h3>
-                    <textarea placeholder="Tuliskan pikiran Anda di sini..." rows="4" cols="50"></textarea>
+                    <textarea placeholder="Tuliskan pikiran Anda di sini..." rows="4"></textarea>
                     <p>Masukkan Anda membantu kami untuk terus memperbaiki diri!</p>
-                    <button type="button" class="btn btn-secondary">Hapus</button>
-                    <button type="submit" onclick="window.location.href='rating_kami.html'; return false;" class="btn btn-primary">Berikan Rating</button>
+                    <div style="display: flex; gap: 10px; width: 100%;">
+                        <button type="button" class="btn btn-secondary">Hapus</button>
+                        <button type="submit" class="btn btn-primary">Berikan Rating</button>
+                    </div>
                 </form>
-                </div>
             </div>
         </div>
         </section>
@@ -83,10 +86,10 @@
         </div>
 
         <div class="footer-nav">
-            <a href="#"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
-            <a href="#"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
-            <a href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a>
-            <a href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a href="tulis_pesanmu.html"><i class="fas fa-pen"></i> Tulis Pesanmu</a>
+            <a href="halaman_utama_login.html"><i class="fas fa-envelope-open"></i> Baca Pesan Orang</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            <a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
             <a href="#"><i class="fas fa-paper-plane"></i> Undang Teman</a>
         </div>
 

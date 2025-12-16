@@ -292,13 +292,13 @@ hr {
 
 /* --- TAMBAHAN KODE BARU --- */
 
-/* 1. Wrapper agar posisi input bisa menumpuk di atas label */
+/* Wrapper agar posisi input bisa menumpuk di atas label */
 .date-wrapper {
     position: relative;
     display: inline-block;
 }
 
-/* 2. Gaya teks "tanggal" agar terlihat seperti link */
+/* Gaya teks "tanggal" agar terlihat seperti link */
 .date-wrapper label {
     color: #5D9CEC; /* Warna biru (sesuai tema link sebelumnya) */
     cursor: pointer;
@@ -312,7 +312,7 @@ hr {
     text-decoration: underline;
 }
 
-/* 3. Input Date dibuat transparan & menutupi label */
+/* Input Date dibuat transparan & menutupi label */
 .date-wrapper input[type="date"] {
     position: absolute;
     left: 0;
@@ -324,7 +324,7 @@ hr {
     z-index: 10; /* Pastikan input ada di lapisan paling atas */
 }
 
-/* 4. Hack Khusus Chrome/Edge/Browser Modern */
+/* Hack Khusus Chrome/Edge/Browser Modern */
 /* Ini memaksa area klik membuka kalender, bukan cuma mengetik teks */
 .date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
@@ -593,8 +593,22 @@ hr {
 
 /* --- RESPONSIVE (MEDIA QUERIES) --- */
 @media (max-width: 992px) {
-    .hero-section { height: 400px; }
-    .neon-box { width: 90%; }
+    .features-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-section {
+        height: 400px; /* Tinggi hero di mobile */
+        padding: 0 20px; /* Tambahan padding di container agar tidak mepet layar */
+    }
+
+    .neon-box { 
+        width: 100%;           /* Pastikan lebar mengikuti container */
+        max-width: 350px;      /* Batasi lebar maksimal agar kotak enak dilihat */
+        margin: 0 auto;        /* Paksa posisi ke tengah secara horizontal */
+        padding: 20px 15px;    /* PENTING: Kecilkan padding (AtasBawah 20px, KiriKanan 15px) */
+    }
+
+    .neon-box h2 {
+        font-size: 1.4rem;     /* Kecilkan font sedikit agar muat */
+    }
 }
 
 @media (max-width: 768px) {
@@ -604,12 +618,7 @@ hr {
     .section-title { font-size: 1.8rem; }
 }
 
-/* =================================================================
-   SOLUSI FINAL CSS BURGER MENU (Override Total Posisi)
-   Ini menggunakan positioning untuk menjamin posisi di KANAN ATAS.
-   ================================================================= */
-
-/* --- 1. Memastikan Tata Letak Horizontal di Desktop (Sesuai Kebutuhan) --- */
+/* --- Memastikan Tata Letak Horizontal di Desktop (Sesuai Kebutuhan) --- */
 .navbar-content {
     /* Tetap butuh flex untuk desktop */
     display: flex !important; 
@@ -619,7 +628,7 @@ hr {
     position: relative; /* Penting untuk positioning anak elemen */
 }
 
-/* --- 2. Gaya Dasar Hamburger (Ikon 3 Garis Animasi) --- */
+/* --- Gaya Dasar Hamburger (Ikon 3 Garis Animasi) --- */
 .hamburger {
     display: none; /* Sembunyikan di desktop */
     position: relative;
@@ -664,10 +673,10 @@ hr {
 }
 
 
-/* --- 3. MOBILE STYLING (Responsive @media) --- */
+/* --- MOBILE STYLING (Responsive @media) --- */
 @media (max-width: 768px) {
     
-    /* 3A. POSISI BURGER MENU DI KANAN ATAS NAVIGASI */
+    /* POSISI BURGER MENU DI KANAN ATAS NAVIGASI */
     .hamburger {
         display: block !important; 
         position: absolute; /* Posisikan absolut dari .navbar-content */
@@ -681,7 +690,7 @@ hr {
         position: static;
     }
     
-    /* 3B. NAV LINKS (Sidebar Slide-in) */
+    /* NAV LINKS (Sidebar Slide-in) */
     .nav-links {
         display: block; 
         position: fixed;
@@ -704,6 +713,20 @@ hr {
         z-index: 1000;
     }
     
+    /* KHUSUS TOMBOL LOGIN & SIGN UP */
+    .nav-links .btn-login,
+    .nav-links .btn-signup {
+        text-align: center;      /* Membuat tulisan ke tengah */
+        margin-top: 10px;        /* Memberi jarak sedikit agar tidak dempet */
+        border: 1px solid rgba(255, 255, 255, 0.5); /* Memperjelas garis kotak */
+    }
+
+    /* Opsional: Menghilangkan garis bawah pemisah khusus untuk area tombol */
+    .nav-links li:has(.btn-login),
+    .nav-links li:has(.btn-signup) {
+        border-bottom: none;
+    }
+
     /* Menu Terbuka (Slide in) */
     .nav-links.is-open {
         transform: translateX(0);

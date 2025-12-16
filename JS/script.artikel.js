@@ -9,41 +9,6 @@ fileInput.addEventListener("change", () => {
     fileName.textContent = fileInput.files[0]?.name || "";
 });
 
-// komentar
-document.addEventListener("click", function (e) {
-
-  const btnKomentar = e.target.closest(".btn-komentar");
-  if (btnKomentar) {
-    e.preventDefault();
-
-    const card = btnKomentar.closest(".konten_card");
-    const wrapper = card.querySelector(".komentar-wrapper");
-
-    console.log("Komentar diklik"); // DEBUG
-
-    if (!wrapper) {
-      console.error("komentar-wrapper tidak ditemukan");
-      return;
-    }
-
-    wrapper.style.display =
-      wrapper.style.display === "none" ? "block" : "none";
-
-    tampilkanKomentar(card);
-  }
-
-  const btnKirim = e.target.closest(".btn-kirim-komentar");
-  if (btnKirim) {
-    const card = btnKirim.closest(".konten_card");
-    const input = card.querySelector(".input-komentar");
-
-    if (!input || input.value.trim() === "") return;
-
-    simpanKomentar(card, input.value.trim());
-    input.value = "";
-    tampilkanKomentar(card);
-  }
-});
 
 // edit
 document.addEventListener("DOMContentLoaded", () => {
@@ -67,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const desc = descEl.innerText;
 
             nameEl.innerHTML = `<input type="text" id="editName" value="${name}">`;
-            usernameEl.innerHTML = `@<input type="text" id="editUsername" value="${username}">`;
+            usernameEl.innerHTML = `<input type="text" id="editUsername" value="${username}">`;
             descEl.innerHTML = `<textarea id="editDesc">${desc}</textarea>`;
 
             btnEdit.innerText = "Simpan";
@@ -89,44 +54,69 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-/// rekomendasi
-document.addEventListener("DOMContentLoaded", () => {
+// Variable untuk menyimpan tab yang sedang aktif
+let currentTab = 'untukmu';
 
-    const rekomendasi = document.getElementById("rekomendasi");
-    const kontenMengikuti = document.getElementById("kontenMengikuti");
-    const kontenUntukmu = document.getElementById("kontenUntukmu");
+// FUNGSI Logika Tombol Ikuti/Mengikuti
+function toggleFollow(btn) {
+    const isFollowing = btn.classList.contains('btn-mengikuti');
 
-    // TAB (link / tombol tab)
-    const tabUntukmu = document.querySelector('[data-tab="untukmu"]');
-    const tabMengikuti = document.querySelector('[data-tab="mengikuti"]');
+    if (isFollowing) {
+        // Unfollow
+        btn.textContent = "Ikuti";
+        btn.classList.remove('btn-mengikuti');
+        btn.classList.add('btn-primary');
+    } else {
+        // Follow
+        btn.textContent = "Mengikuti";
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-mengikuti');
+    }
 
-    rekomendasi.addEventListener("click", (e) => {
+    // Jika user sedang di tab 'Mengikuti' dan melakukan unfollow,
+    // refresh tab agar kartu langsung hilang
+    if (currentTab === 'mengikuti') {
+        filterTab('mengikuti');
+    }
+}
 
-        if (e.target.tagName === "BUTTON" && e.target.textContent === "Ikuti") {
+// FUNGSI Logika Pindah Tab & Filter Konten
+function filterTab(tabName) {
+    currentTab = tabName; 
 
-            const account = e.target.closest(".recommend_account");
-            const username = account.dataset.user;
+    // Atur Visual Tab (Garis Biru)
+    const tabUntukmu = document.getElementById('tabUntukmu');
+    const tabMengikuti = document.getElementById('tabMengikuti');
 
-            //Ubah tombol
-            e.target.textContent = "Mengikuti";
-            e.target.disabled = true;
-            e.target.classList.remove("btn-primary");
-            e.target.classList.add("btn-secondary");
+    if (tabName === 'untukmu') {
+        tabUntukmu.classList.add('active');
+        tabMengikuti.classList.remove('active');
+    } else {
+        tabMengikuti.classList.add('active');
+        tabUntukmu.classList.remove('active');
+    }
 
-            //Pindahkan akun ke tab Mengikuti
-            kontenMengikuti.appendChild(account);
+    // Filter Kartu
+    const allSections = document.querySelectorAll('.konten_section');
 
-            //TAMPILKAN TAB MENGIKUTI (BUKAN UNTUKMU)
-            kontenUntukmu.style.display = "none";
-            kontenMengikuti.style.display = "block";
-
-            //AKTIFKAN TAB "Mengikuti"
-            tabUntukmu?.classList.remove("active");
-            tabMengikuti?.classList.add("active");
-
-            console.log(`Sekarang mengikuti ${username}`);
+    allSections.forEach(section => {
+        // Cari tombol ikuti DI DALAM section ini
+        const btn = section.querySelector('.btn-ikuti');
+        
+        if (tabName === 'untukmu') {
+            // Tab Untukmu: Tampilkan SEMUA
+            section.style.display = 'block';
+        } 
+        else if (tabName === 'mengikuti') {
+            // Tab Mengikuti:
+            // Cek apakah tombol ada DAN memiliki class 'btn-mengikuti'
+            if (btn && btn.classList.contains('btn-mengikuti')) {
+                section.style.display = 'block'; 
+            } else {
+                section.style.display = 'none'; 
+            }
         }
     });
+}
 
-});
 
